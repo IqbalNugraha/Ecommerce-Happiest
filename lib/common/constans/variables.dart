@@ -19,8 +19,25 @@ class Variables {
   static const String register = "Register";
   static const String forgotPassword = "Forgot Password?";
 
+  //register
+  static const String headerRegister = "Let's Register and Find Your Journey";
+  static const String name = "Fullname";
+  static const String rePassword = "Retype Password";
+  static const String hintRePassword = "Input your retype password";
+  static const String hintName = "Input your fullname";
+  static const String btnRegister = "Register";
+  static const String haveAccount = "Have an account?";
+  static const String login = "Login";
+
+  //bottom-navigation
+  static const String home = "Home";
+  static const String search = "Search";
+  static const String profile = "Profile";
+
   //message
   static const String cantEmpty = "Field can't empty";
+  static const String passwordEmpty = "Password can't empty";
+  static const String passwordNotSame = "Password is not same";
   static const String http408 = "Request Time Out";
   static const String httpService = "Internal Services Error";
 
