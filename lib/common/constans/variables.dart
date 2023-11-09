@@ -34,6 +34,13 @@ class Variables {
   static const String search = "Search";
   static const String profile = "Profile";
 
+  //home
+  static const String yourLocation = "Your Location";
+  static const String locationStatic = "West Java, Bandung";
+
+  //promotion
+  static const String getNow = "Get It Now";
+
   //message
   static const String cantEmpty = "Field can't empty";
   static const String passwordEmpty = "Password can't empty";

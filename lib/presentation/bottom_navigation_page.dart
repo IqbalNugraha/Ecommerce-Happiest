@@ -1,8 +1,8 @@
-import 'package:ecommerce_final_task/common/constans/variables.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 
 import '../common/constans/colors.dart';
+import '../common/constans/variables.dart';
+import 'home/home_page.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({super.key});
@@ -12,80 +12,44 @@ class BottomNavigationPage extends StatefulWidget {
 }
 
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
-  final _pageController = PageController(initialPage: 0);
-  final _controller = NotchBottomBarController(index: 0);
-  int maxCount = 3;
+  int _selectedIndex = 0;
 
-  // widget list
-  final List<Widget> _bottomBarPages = [
-    Container(),
-    Container(),
-    Container(),
+  final List<Widget> _pages = [
+    const HomePage(),
+    const Center(child: Text(Variables.search)),
+    const Center(child: Text(Variables.profile)),
   ];
 
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        children: List.generate(
-            _bottomBarPages.length, (index) => _bottomBarPages[index]),
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        selectedItemColor: MyColors.brandColor,
+        onTap: _onItemTapped,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: Variables.home,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: Variables.search,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: Variables.profile,
+          ),          
+        ],
       ),
-      extendBody: true,
-      bottomNavigationBar: (_bottomBarPages.length <= maxCount)
-          ? AnimatedNotchBottomBar(
-              notchBottomBarController: _controller,
-              showLabel: false,
-              removeMargins: false,
-              bottomBarWidth: 500,
-              durationInMilliSeconds: 300,
-              bottomBarItems: const [
-                BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.home_filled,
-                    color: MyColors.greyColor,
-                  ),
-                  activeItem: Icon(
-                    Icons.home_filled,
-                    color: MyColors.redColor,
-                  ),
-                  itemLabel: Variables.home,
-                ),
-                BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.search,
-                    color: MyColors.greyColor,
-                  ),
-                  activeItem: Icon(
-                    Icons.search,
-                    color: MyColors.redColor,
-                  ),
-                  itemLabel: Variables.search,
-                ),
-                BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.people,
-                    color: MyColors.greyColor,
-                  ),
-                  activeItem: Icon(
-                    Icons.people,
-                    color: MyColors.redColor,
-                  ),
-                  itemLabel: Variables.profile,
-                ),
-              ],
-              onTap: (index) {
-                _pageController.jumpToPage(index);
-              },
-            )
-          : null,
     );
   }
 }
