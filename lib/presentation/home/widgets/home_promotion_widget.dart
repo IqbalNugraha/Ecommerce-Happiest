@@ -1,6 +1,5 @@
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce_final_task/common/components/custom_loading_state.dart';
+import 'package:ecommerce_final_task/common/components/custom_skelton.dart';
 import 'package:ecommerce_final_task/presentation/home/widgets/component_promotion_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,14 +7,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../common/constans/colors.dart';
 import '../bloc/promotion/promotion_bloc.dart';
 
-class PromotionWidget extends StatefulWidget {
-  const PromotionWidget({super.key});
+class HomePromotionWidget extends StatefulWidget {
+  const HomePromotionWidget({super.key});
 
   @override
-  State<PromotionWidget> createState() => _PromotionWidgetState();
+  State<HomePromotionWidget> createState() => _HomePromotionWidgetState();
 }
 
-class _PromotionWidgetState extends State<PromotionWidget> {
+class _HomePromotionWidgetState extends State<HomePromotionWidget> {
   final CarouselController _controller = CarouselController();
   int _current = 0;
 
@@ -25,7 +24,10 @@ class _PromotionWidgetState extends State<PromotionWidget> {
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () {
-            return const CustomLoadingState();
+            return const CustomSkelton(
+              height: 200,
+              width: double.infinity,
+            );
           },
           success: (response) {
             return Column(

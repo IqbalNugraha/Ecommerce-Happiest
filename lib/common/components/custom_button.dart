@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../constans/colors.dart';
 
 class CustomButton extends StatelessWidget {
-  final double height;
+  final double height, borderRadius;
   final double? width;
   final Color btnColor;
   final Color? shadowColor;
@@ -16,6 +16,7 @@ class CustomButton extends StatelessWidget {
     this.btnColor = MyColors.brandColor,    
     this.width,
     this.height = 50,
+    this.borderRadius = 20,
     this.shadowColor,
     this.margin,
     super.key,
@@ -32,7 +33,7 @@ class CustomButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: btnColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(borderRadius),
           ),
           shadowColor: shadowColor,
         ),

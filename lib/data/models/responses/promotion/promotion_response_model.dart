@@ -18,7 +18,8 @@ class PromotionResponseModel {
       PromotionResponseModel(
         data: json["data"] == null
             ? []
-            : List<DataPromotion>.from(json["data"]!.map((x) => DataPromotion.fromMap(x))),
+            : List<DataPromotion>.from(
+                json["data"]!.map((x) => DataPromotion.fromMap(x))),
         meta: json["meta"] == null ? null : Meta.fromMap(json["meta"]),
       );
 
@@ -38,7 +39,8 @@ class DataPromotion {
     this.attributes,
   });
 
-  factory DataPromotion.fromJson(String str) => DataPromotion.fromMap(json.decode(str));
+  factory DataPromotion.fromJson(String str) =>
+      DataPromotion.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
@@ -81,7 +83,8 @@ class PromotionAttributes {
 
   String toJson() => json.encode(toMap());
 
-  factory PromotionAttributes.fromMap(Map<String, dynamic> json) => PromotionAttributes(
+  factory PromotionAttributes.fromMap(Map<String, dynamic> json) =>
+      PromotionAttributes(
         title: json["title"],
         promotion: json["promotion"],
         value: json["value"]?.toDouble(),
@@ -95,7 +98,9 @@ class PromotionAttributes {
             ? null
             : DateTime.parse(json["publishedAt"]),
         stock: json["stock"],
-        image: json["image"] == null ? null : ImagePromotion.fromMap(json["image"]),
+        image: json["image"] == null
+            ? null
+            : ImagePromotion.fromMap(json["image"]),
       );
 
   Map<String, dynamic> toMap() => {
@@ -117,7 +122,8 @@ class ImagePromotion {
     this.data,
   });
 
-  factory ImagePromotion.fromJson(String str) => ImagePromotion.fromMap(json.decode(str));
+  factory ImagePromotion.fromJson(String str) =>
+      ImagePromotion.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
@@ -162,7 +168,6 @@ class DataAttributes {
   final dynamic caption;
   final int? width;
   final int? height;
-  final Formats? formats;
   final String? hash;
   final String? ext;
   final String? mime;
@@ -180,7 +185,6 @@ class DataAttributes {
     this.caption,
     this.width,
     this.height,
-    this.formats,
     this.hash,
     this.ext,
     this.mime,
@@ -204,8 +208,6 @@ class DataAttributes {
         caption: json["caption"],
         width: json["width"],
         height: json["height"],
-        formats:
-            json["formats"] == null ? null : Formats.fromMap(json["formats"]),
         hash: json["hash"],
         ext: json["ext"],
         mime: json["mime"],
@@ -228,7 +230,6 @@ class DataAttributes {
         "caption": caption,
         "width": width,
         "height": height,
-        "formats": formats?.toMap(),
         "hash": hash,
         "ext": ext,
         "mime": mime,
@@ -239,91 +240,6 @@ class DataAttributes {
         "provider_metadata": providerMetadata,
         "createdAt": createdAt?.toIso8601String(),
         "updatedAt": updatedAt?.toIso8601String(),
-      };
-}
-
-class Formats {
-  final Large? thumbnail;
-  final Large? medium;
-  final Large? small;
-  final Large? large;
-
-  Formats({
-    this.thumbnail,
-    this.medium,
-    this.small,
-    this.large,
-  });
-
-  factory Formats.fromJson(String str) => Formats.fromMap(json.decode(str));
-
-  String toJson() => json.encode(toMap());
-
-  factory Formats.fromMap(Map<String, dynamic> json) => Formats(
-        thumbnail:
-            json["thumbnail"] == null ? null : Large.fromMap(json["thumbnail"]),
-        medium: json["medium"] == null ? null : Large.fromMap(json["medium"]),
-        small: json["small"] == null ? null : Large.fromMap(json["small"]),
-        large: json["large"] == null ? null : Large.fromMap(json["large"]),
-      );
-
-  Map<String, dynamic> toMap() => {
-        "thumbnail": thumbnail?.toMap(),
-        "medium": medium?.toMap(),
-        "small": small?.toMap(),
-        "large": large?.toMap(),
-      };
-}
-
-class Large {
-  final String? name;
-  final String? hash;
-  final String? ext;
-  final String? mime;
-  final dynamic path;
-  final int? width;
-  final int? height;
-  final double? size;
-  final String? url;
-
-  Large({
-    this.name,
-    this.hash,
-    this.ext,
-    this.mime,
-    this.path,
-    this.width,
-    this.height,
-    this.size,
-    this.url,
-  });
-
-  factory Large.fromJson(String str) => Large.fromMap(json.decode(str));
-
-  String toJson() => json.encode(toMap());
-
-  factory Large.fromMap(Map<String, dynamic> json) => Large(
-        name: json["name"],
-        hash: json["hash"],
-        ext: json["ext"],
-        mime: json["mime"],
-        path: json["path"],
-        width: json["width"],
-        height: json["height"],
-        size: json["size"]?.toDouble(),
-        url: json["url"],
-      );
-
-  Map<String, dynamic> toMap() => {
-        "name": name,
-        "hash": hash,
-        "ext": ext,
-        "mime": mime,
-        "path": path,
-        "width": width,
-        "height": height,
-        "size": size,
-        "url": url,
       };
 }
 

@@ -1,5 +1,6 @@
 import 'package:ecommerce_final_task/common/components/custom_font.dart';
 import 'package:ecommerce_final_task/common/components/custom_loading_state.dart';
+import 'package:ecommerce_final_task/data/datasources/local_remote_datasources.dart';
 import 'package:ecommerce_final_task/data/models/requests/auth/login_request_model.dart';
 import 'package:ecommerce_final_task/presentation/auth/register_page.dart';
 import 'package:ecommerce_final_task/presentation/bottom_navigation_page.dart';
@@ -58,7 +59,6 @@ class _LoginPageState extends State<LoginPage> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: WillPopScope(
         onWillPop: _onWillPop,
         child: Stack(
@@ -184,6 +184,7 @@ class _LoginPageState extends State<LoginPage> {
                         state.maybeWhen(
                           orElse: () {},
                           success: (response) {
+                            LocalRemoteDatasource().saveAuthData(response);
                             Navigations.pushAndRemoveNavigation(
                               context,
                               const BottomNavigationPage(),

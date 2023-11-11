@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class MyColors {
   //brand color
   static const Color brandColor = Color(0xFFDA291C);
-  static const Color brandDarkColor = Color(0xFFC2820F);
+  static const Color brandDarkColor = Color(0xFFDA291C);
   static const Color brandOrangeColor = Color(0xFFF2A213);
   static const Color brandMediumColor = Color(0xFFF5B542);
-  static const Color brandLightColor = Color(0xFFF7C771);
+  static const Color brandLightColor = Color.fromARGB(255, 179, 68, 60);
   static const Color brandLighterColor = Color(0xFFFDF1DC);
 
   //background color
@@ -32,4 +32,6 @@ class MyColors {
   static const Color greyColor = Color(0xFFC0C0C0);
   static const Color blackColor = Color(0xFF2B2B2B);
   static const Color semiBlackColor = Color(0xFF4c4c4c);
+
+  static const Color shadow = Color.fromARGB(73, 46, 43, 43);
 }

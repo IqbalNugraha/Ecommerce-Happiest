@@ -9,10 +9,10 @@ class FontHeebo extends StatefulWidget {
   final TextAlign alignment;
   const FontHeebo({
     required this.text,
-    required this.fontSize ,
-    required this.fontWeight ,
-    required this.fontColor ,
-    required this.alignment ,
+    required this.fontSize,
+    required this.fontWeight,
+    required this.fontColor,
+    required this.alignment,
     super.key,
   });
 

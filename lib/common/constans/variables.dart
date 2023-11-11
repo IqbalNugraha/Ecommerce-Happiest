@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+
+import 'colors.dart';
 import 'images.dart';
 
 class Variables {
@@ -32,14 +35,29 @@ class Variables {
   //bottom-navigation
   static const String home = "Home";
   static const String search = "Search";
+  static const String favorite = "Favorite";
   static const String profile = "Profile";
 
   //home
   static const String yourLocation = "Your Location";
   static const String locationStatic = "West Java, Bandung";
+  static const String categories = "Categories";
+  static const String viewMore = "View More";
 
   //promotion
   static const String getNow = "Get It Now";
+
+  //product
+  static const String detailProduct = "Detail Product";
+  static const String stock = "Stock";
+  static const String sendFrom = "Send From";
+  static const String description = "Description";
+  static const String review = "Review";
+
+  //cart
+  static const String total = "Total :";
+  static const String addToCart = "Add to Cart";
+  static const String cartAppbar = "Cart Page";
 
   //message
   static const String cantEmpty = "Field can't empty";
@@ -48,9 +66,30 @@ class Variables {
   static const String http408 = "Request Time Out";
   static const String httpService = "Internal Services Error";
 
+  //hardcode
+  static const String emptyReview = "Nothing Review";
+  static const String emptyCart = "Cart is Empty";
+
   static const List<String> images = [
     ImageAssets.landing1,
     ImageAssets.landing2,
     ImageAssets.landing3,
+  ];
+
+  // shadow
+  static const List<BoxShadow> shadowRadius1 = [
+    BoxShadow(
+      color: MyColors.shadow,
+      blurRadius: 1,
+      spreadRadius: 1,
+    ),
+  ];
+
+  static const List<BoxShadow> shadowRadius8 = [
+    BoxShadow(
+      color: MyColors.shadow,
+      blurRadius: 8,
+      spreadRadius: 1,
+    ),
   ];
 }
