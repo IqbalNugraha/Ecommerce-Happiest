@@ -36,11 +36,11 @@ class _RegisterPageState extends State<RegisterPage> {
       if (passwordController.text.isEmpty &&
           rePasswordController.text.isEmpty) {
         setState(() {
-          _errorText = Variables.passwordEmpty;
+          _errorText = Variables.msgPasswordEmpty;
         });
       } else if (passwordController.text != rePasswordController.text) {
         setState(() {
-          _errorText = Variables.passwordNotSame;
+          _errorText = Variables.msgPasswordNotSame;
         });
       } else {
         setState(() {
@@ -51,7 +51,7 @@ class _RegisterPageState extends State<RegisterPage> {
     rePasswordController.addListener(() {
       if (passwordController.text != rePasswordController.text) {
         setState(() {
-          _errorText = Variables.passwordNotSame;
+          _errorText = Variables.msgPasswordNotSame;
         });
       } else {
         setState(() {

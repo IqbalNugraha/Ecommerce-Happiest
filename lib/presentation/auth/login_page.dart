@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
     emailController.addListener(() {
       if (emailController.text.isEmpty && passwordController.text.isEmpty) {
         setState(() {
-          _errorText = Variables.cantEmpty;
+          _errorText = Variables.msgCantEmpty;
         });
       } else {
         setState(() {

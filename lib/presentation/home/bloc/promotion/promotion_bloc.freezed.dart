@@ -285,7 +285,7 @@ mixin _$PromotionState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(PromotionResponseModel data) success,
-    required TResult Function(String error) errir,
+    required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -293,7 +293,7 @@ mixin _$PromotionState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PromotionResponseModel data)? success,
-    TResult? Function(String error)? errir,
+    TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -301,7 +301,7 @@ mixin _$PromotionState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PromotionResponseModel data)? success,
-    TResult Function(String error)? errir,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -310,7 +310,7 @@ mixin _$PromotionState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Error value) errir,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -318,7 +318,7 @@ mixin _$PromotionState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? errir,
+    TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -326,7 +326,7 @@ mixin _$PromotionState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Error value)? errir,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -391,7 +391,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(PromotionResponseModel data) success,
-    required TResult Function(String error) errir,
+    required TResult Function(String error) error,
   }) {
     return initial();
   }
@@ -402,7 +402,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PromotionResponseModel data)? success,
-    TResult? Function(String error)? errir,
+    TResult? Function(String error)? error,
   }) {
     return initial?.call();
   }
@@ -413,7 +413,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PromotionResponseModel data)? success,
-    TResult Function(String error)? errir,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -428,7 +428,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Error value) errir,
+    required TResult Function(_Error value) error,
   }) {
     return initial(this);
   }
@@ -439,7 +439,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? errir,
+    TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
   }
@@ -450,7 +450,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Error value)? errir,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -505,7 +505,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(PromotionResponseModel data) success,
-    required TResult Function(String error) errir,
+    required TResult Function(String error) error,
   }) {
     return loading();
   }
@@ -516,7 +516,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PromotionResponseModel data)? success,
-    TResult? Function(String error)? errir,
+    TResult? Function(String error)? error,
   }) {
     return loading?.call();
   }
@@ -527,7 +527,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PromotionResponseModel data)? success,
-    TResult Function(String error)? errir,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -542,7 +542,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Error value) errir,
+    required TResult Function(_Error value) error,
   }) {
     return loading(this);
   }
@@ -553,7 +553,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? errir,
+    TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
   }
@@ -564,7 +564,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Error value)? errir,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -645,7 +645,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(PromotionResponseModel data) success,
-    required TResult Function(String error) errir,
+    required TResult Function(String error) error,
   }) {
     return success(data);
   }
@@ -656,7 +656,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PromotionResponseModel data)? success,
-    TResult? Function(String error)? errir,
+    TResult? Function(String error)? error,
   }) {
     return success?.call(data);
   }
@@ -667,7 +667,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PromotionResponseModel data)? success,
-    TResult Function(String error)? errir,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -682,7 +682,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Error value) errir,
+    required TResult Function(_Error value) error,
   }) {
     return success(this);
   }
@@ -693,7 +693,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? errir,
+    TResult? Function(_Error value)? error,
   }) {
     return success?.call(this);
   }
@@ -704,7 +704,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Error value)? errir,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -764,7 +764,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'PromotionState.errir(error: $error)';
+    return 'PromotionState.error(error: $error)';
   }
 
   @override
@@ -790,9 +790,9 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(PromotionResponseModel data) success,
-    required TResult Function(String error) errir,
+    required TResult Function(String error) error,
   }) {
-    return errir(error);
+    return error(this.error);
   }
 
   @override
@@ -801,9 +801,9 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PromotionResponseModel data)? success,
-    TResult? Function(String error)? errir,
+    TResult? Function(String error)? error,
   }) {
-    return errir?.call(error);
+    return error?.call(this.error);
   }
 
   @override
@@ -812,11 +812,11 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PromotionResponseModel data)? success,
-    TResult Function(String error)? errir,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (errir != null) {
-      return errir(error);
+    if (error != null) {
+      return error(this.error);
     }
     return orElse();
   }
@@ -827,9 +827,9 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Error value) errir,
+    required TResult Function(_Error value) error,
   }) {
-    return errir(this);
+    return error(this);
   }
 
   @override
@@ -838,9 +838,9 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? errir,
+    TResult? Function(_Error value)? error,
   }) {
-    return errir?.call(this);
+    return error?.call(this);
   }
 
   @override
@@ -849,11 +849,11 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Error value)? errir,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
-    if (errir != null) {
-      return errir(this);
+    if (error != null) {
+      return error(this);
     }
     return orElse();
   }

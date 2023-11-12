@@ -1,10 +1,13 @@
+import 'package:ecommerce_final_task/common/components/custom_loading_state.dart';
 import 'package:ecommerce_final_task/presentation/cart/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../common/constans/colors.dart';
 import '../../../common/constans/navigation.dart';
 import '../../../common/constans/variables.dart';
+import '../../cart/bloc/list_cart/cart_list_bloc.dart';
 
 class HomeAppbarWidget extends StatelessWidget {
   const HomeAppbarWidget({super.key});
@@ -50,23 +53,38 @@ class HomeAppbarWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              GestureDetector(
-                onTap: () {
-                  Navigations.pushNavigation(
-                    context,
-                    const CartPage(),
+              BlocBuilder<CartListBloc, CartListState>(
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    orElse: () {
+                      return const CustomLoadingState();
+                    },
+                    success: (response) {
+                      int totalQuantity = 0;
+                      for (var cart in response) {
+                        totalQuantity += cart.quantity;
+                      }
+                      return GestureDetector(
+                        onTap: () {
+                          Navigations.pushNavigation(
+                            context,
+                            const CartPage(),
+                          );
+                        },
+                        child: badges.Badge(
+                          badgeContent: Text(
+                            totalQuantity.toString(),
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          child: const Icon(
+                            Icons.shopping_cart_outlined,
+                            color: MyColors.blackColor,
+                          ),
+                        ),
+                      );
+                    },
                   );
                 },
-                child: const badges.Badge(
-                  badgeContent: Text(
-                    "0",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  child: Icon(
-                    Icons.shopping_cart_outlined,
-                    color: MyColors.blackColor,
-                  ),
-                ),
               ),
               const Icon(
                 Icons.notifications_none_sharp,

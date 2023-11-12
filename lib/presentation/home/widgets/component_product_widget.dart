@@ -3,7 +3,6 @@ import 'package:ecommerce_final_task/common/components/custom_font.dart';
 import 'package:ecommerce_final_task/common/constans/variables.dart';
 import 'package:ecommerce_final_task/common/extensions/ext_format_currency.dart';
 import 'package:ecommerce_final_task/data/models/responses/product/products_response_model.dart';
-import 'package:ecommerce_final_task/presentation/cart/bloc/bloc/cart_bloc.dart';
 import 'package:ecommerce_final_task/presentation/cart/widgets/cart_model.dart';
 import 'package:ecommerce_final_task/presentation/product/detail_product_page.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../common/constans/api_services.dart';
 import '../../../common/constans/colors.dart';
 import '../../../common/constans/navigation.dart';
+import '../../cart/bloc/cart/cart_bloc.dart';
 
 class ComponentProductWidget extends StatelessWidget {
   final ProductsResponse data;

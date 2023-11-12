@@ -5,19 +5,18 @@ import '../../../common/constans/api_services.dart';
 import '../../../common/constans/colors.dart';
 import '../../../data/models/responses/product/products_response_model.dart';
 
-class SliderDetailImageWidget extends StatefulWidget {
+class ComponentSliderWidget extends StatefulWidget {
   final ProductAttributes data;
-  const SliderDetailImageWidget({
+  const ComponentSliderWidget({
     super.key,
     required this.data,
   });
 
   @override
-  State<SliderDetailImageWidget> createState() =>
-      _SliderDetailImageWidgetState();
+  State<ComponentSliderWidget> createState() => _ComponentSliderWidgetState();
 }
 
-class _SliderDetailImageWidgetState extends State<SliderDetailImageWidget> {
+class _ComponentSliderWidgetState extends State<ComponentSliderWidget> {
   final CarouselController _controller = CarouselController();
   int _current = 0;
 
@@ -25,7 +24,7 @@ class _SliderDetailImageWidgetState extends State<SliderDetailImageWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 48),
+        const SizedBox(height: 64),
         Hero(
           tag: widget.data.image!.data!.first.attributes!.url!,
           child: CarouselSlider(
@@ -62,6 +61,7 @@ class _SliderDetailImageWidgetState extends State<SliderDetailImageWidget> {
                           ? MyColors.greyColor
                           : MyColors.redColor)
                       .withOpacity(_current == entry.key ? 0.9 : 0.4),
+                  borderRadius: BorderRadius.circular(20),
                 ),
               ),
             );

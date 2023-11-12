@@ -15,4 +15,5 @@ class ImageAssets {
   static const String iconClothe = "assets/svg/clothe.svg";
   static const String iconPant = "assets/svg/pant.svg";
   static const String iconJacket = "assets/svg/jacket.svg";
+  static const String iconDiscount = "assets/svg/discount.svg";
 }

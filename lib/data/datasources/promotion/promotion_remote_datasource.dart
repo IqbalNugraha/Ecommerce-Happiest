@@ -17,7 +17,7 @@ class PromotionRemoteDatasource {
         .timeout(
       const Duration(seconds: 10),
       onTimeout: () {
-        return http.Response(Variables.http408, 408);
+        return http.Response(Variables.msgHttp408, 408);
       },
     );
 
@@ -32,9 +32,9 @@ class PromotionRemoteDatasource {
     } else if (response.statusCode == 404) {
       return Right(PromotionResponseModel.fromJson(response.body));
     } else if (response.statusCode == 408) {
-      return const Left(Variables.http408);
+      return const Left(Variables.msgHttp408);
     } else {
-      return const Left(Variables.httpService);
+      return const Left(Variables.msgHttpService);
     }
   }
 }

@@ -4,6 +4,7 @@ import 'package:ecommerce_final_task/presentation/home/widgets/component_promoti
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../common/components/custom_font.dart';
 import '../../../common/constans/colors.dart';
 import '../bloc/promotion/promotion_bloc.dart';
 
@@ -75,6 +76,17 @@ class _HomePromotionWidgetState extends State<HomePromotionWidget> {
                   }).toList(),
                 ),
               ],
+            );
+          },
+          error: (error) {
+            return Center(
+              child: FontHeebo(
+                text: error,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                fontColor: MyColors.blackColor,
+                alignment: TextAlign.center,
+              ),
             );
           },
         );

@@ -15,7 +15,26 @@ class CartListBloc extends Bloc<CartListEvent, CartListState> {
       final index = currentState.carts
           .indexWhere((element) => element.product.id == event.cart.product.id);
       if (index >= 0) {
-        currentState.carts[index].quantity += 1;
+        currentState.carts[index].quantity + 1;
+        currentState.carts[index].total = (currentState.carts[index].quantity +=
+                1) *
+            (int.parse(currentState.carts[index].product.attributes!.price!));
+        emit(const _Loading());
+        emit(_Success(currentState.carts));
+      } else {
+        emit(_Success([...currentState.carts, event.cart]));
+      }
+    });
+
+    on<_AddList>((event, emit) {
+      final currentState = state as _Success;
+      //bila product ada di cart, maka tambahkan quantity
+      final index = currentState.carts
+          .indexWhere((element) => element.product.id == event.cart.product.id);
+      if (index >= 0) {
+        currentState.carts[index].quantity += event.cart.quantity;
+        currentState.carts[index].total = currentState.carts[index].quantity *
+            (int.parse(currentState.carts[index].product.attributes!.price!));
         emit(const _Loading());
         emit(_Success(currentState.carts));
       } else {
@@ -30,6 +49,8 @@ class CartListBloc extends Bloc<CartListEvent, CartListState> {
           .indexWhere((element) => element.product.id == event.cart.product.id);
       if (index >= 0) {
         currentState.carts[index].quantity -= 1;
+        currentState.carts[index].total = (currentState.carts[index].quantity *
+            (int.parse(currentState.carts[index].product.attributes!.price!)));
 
         if (currentState.carts[index].quantity <= 0) {
           currentState.carts.removeAt(index);

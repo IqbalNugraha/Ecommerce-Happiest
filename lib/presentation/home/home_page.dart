@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 
 import '../../common/constans/colors.dart';
-import '../../common/constans/variables.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

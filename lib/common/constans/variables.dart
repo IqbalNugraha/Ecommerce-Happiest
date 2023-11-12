@@ -58,13 +58,20 @@ class Variables {
   static const String total = "Total :";
   static const String addToCart = "Add to Cart";
   static const String cartAppbar = "Cart Page";
+  static const String btnCheckout = "Check Out";
+
+  //voucher
+  static const String myVoucher = "My Voucher";
+  static const String btnSaveVoucher = "Save Voucher";
 
   //message
-  static const String cantEmpty = "Field can't empty";
-  static const String passwordEmpty = "Password can't empty";
-  static const String passwordNotSame = "Password is not same";
-  static const String http408 = "Request Time Out";
-  static const String httpService = "Internal Services Error";
+  static const String msgCantEmpty = "Field can't empty";
+  static const String msgPasswordEmpty = "Password can't empty";
+  static const String msgPasswordNotSame = "Password is not same";
+  static const String msgSuccessCart = "Success add to Cart";
+  static const String msgUseVoucher = "Use some Voucher?";
+  static const String msgHttp408 = "Request Time Out";
+  static const String msgHttpService = "Internal Services Error";
 
   //hardcode
   static const String emptyReview = "Nothing Review";

@@ -1,7 +1,7 @@
 import 'package:ecommerce_final_task/common/components/custom_loading_state.dart';
 import 'package:ecommerce_final_task/common/extensions/ext_format_currency.dart';
 import 'package:ecommerce_final_task/data/models/responses/product/products_response_model.dart';
-import 'package:ecommerce_final_task/data/repository/init_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ecommerce_final_task/presentation/cart/bloc/list_cart/cart_list_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +13,8 @@ import '../../../common/components/custom_font.dart';
 import '../../../common/constans/colors.dart';
 import '../../../common/constans/navigation.dart';
 import '../../../common/constans/variables.dart';
-import '../../cart/bloc/bloc/cart_bloc.dart';
+import '../../../data/repository/init_bloc.dart';
+import '../../cart/bloc/cart/cart_bloc.dart';
 
 class DetailCartWidget extends StatelessWidget {
   final ProductsResponse data;
@@ -42,7 +43,7 @@ class DetailCartWidget extends StatelessWidget {
               return const CustomLoadingState();
             },
             success: (response) {
-              var _total =
+              var total =
                   int.parse(data.attributes!.price!) * response.quantity;
               return Column(
                 children: [
@@ -97,7 +98,7 @@ class DetailCartWidget extends StatelessWidget {
                       ),
                       const SizedBox(width: 4),
                       FontHeebo(
-                        text: _total.intCurrencyFormatRp,
+                        text: total.intCurrencyFormatRp,
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         fontColor: MyColors.blackColor,
@@ -126,10 +127,14 @@ class DetailCartWidget extends StatelessWidget {
                           height: 60,
                           function: () {
                             Navigations.popNavigation(context);
+                            Fluttertoast.showToast(
+                              msg: Variables.msgSuccessCart,
+                            );
                             RepositoryBloc.initBloc(context);
+                            print("response: ${response.quantity}");
                             context
                                 .read<CartListBloc>()
-                                .add(CartListEvent.add(response));
+                                .add(CartListEvent.addCart(response));
                           },
                           borderRadius: 10,
                           widget: const Row(
