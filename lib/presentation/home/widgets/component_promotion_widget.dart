@@ -3,13 +3,13 @@ import 'package:ecommerce_final_task/common/components/custom_font.dart';
 import 'package:ecommerce_final_task/common/constans/api_services.dart';
 import 'package:ecommerce_final_task/common/constans/images.dart';
 import 'package:ecommerce_final_task/common/constans/variables.dart';
-import 'package:ecommerce_final_task/data/models/responses/promotion/promotion_response_model.dart';
+import 'package:ecommerce_final_task/data/models/responses/promotion/list_promotion_response_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/constans/colors.dart';
 
 class PromotionComponentWidget extends StatefulWidget {
-  final DataPromotion dataPromotion;
+  final DataListPromotion dataPromotion;
   const PromotionComponentWidget({
     required this.dataPromotion,
     super.key,

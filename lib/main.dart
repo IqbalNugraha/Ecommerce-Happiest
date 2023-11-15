@@ -1,8 +1,10 @@
 import 'package:ecommerce_final_task/common/constans/colors.dart';
 import 'package:ecommerce_final_task/presentation/auth/bloc/login/login_bloc.dart';
+import 'package:ecommerce_final_task/presentation/check_out/bloc/user_address/user_address_bloc.dart';
 import 'package:ecommerce_final_task/presentation/home/bloc/product/product_bloc.dart';
 import 'package:ecommerce_final_task/presentation/home/bloc/promotion/promotion_bloc.dart';
 import 'package:ecommerce_final_task/presentation/splash_page.dart';
+import 'package:ecommerce_final_task/presentation/voucher/bloc/promotion_by_id/promotion_by_id_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,11 +42,20 @@ class MainApp extends StatelessWidget {
           create: (context) =>
               PromotionBloc()..add(const PromotionEvent.getAllPromotions()),
         ),
+        BlocProvider(
+          create: (context) => PromotionByIdBloc()
+            ..add(const PromotionByIdEvent.getPromotionById(0)),
+        ),
 
         //product
         BlocProvider(
           create: (context) =>
               ProductBloc()..add(const ProductEvent.getAllProducts()),
+        ),
+
+        //user_address
+        BlocProvider(
+          create: (context) => UserAddressBloc(),
         ),
 
         //util

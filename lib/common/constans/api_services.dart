@@ -1,5 +1,5 @@
 class ApiServices {
-  static const String baseUrl = "https://7369-103-147-8-121.ngrok-free.app";
+  static const String baseUrl = "https://09d4-103-147-8-252.ngrok-free.app";
 
   //auth
   static const String login = "/api/auth/local";
@@ -10,4 +10,8 @@ class ApiServices {
 
   //products
   static const String getAllProducts = "/api/products?populate=*";
+
+  //user-address
+  static const String getUserAddress = "/api/user-addresses?populate=*";
+  static const String addUserAddress = "/api/user-addresses";
 }

@@ -15,3 +15,11 @@ extension IntExt on int {
         decimalDigits: 0,
       ).format(this);
 }
+
+extension DoubleExt on double {
+  String get doubleCurrencyFormatRp => NumberFormat.currency(
+        locale: 'id',
+        symbol: 'Rp. ',
+        decimalDigits: 0,
+      ).format(this);
+}

@@ -1,6 +1,6 @@
 import 'package:ecommerce_final_task/common/components/custom_container.dart';
 import 'package:ecommerce_final_task/common/components/custom_font.dart';
-import 'package:ecommerce_final_task/data/models/responses/promotion/promotion_response_model.dart';
+import 'package:ecommerce_final_task/data/models/responses/promotion/list_promotion_response_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/constans/api_services.dart';
@@ -9,7 +9,7 @@ import '../../../common/constans/variables.dart';
 
 class ComponentVoucherWidget extends StatelessWidget {
   final bool isSelected;
-  final PromotionAttributes data;
+  final PromotionAttributesList data;
   final VoidCallback onTap;
   const ComponentVoucherWidget({
     super.key,

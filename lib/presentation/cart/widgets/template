@@ -1,0 +1,145 @@
+BlocBuilder<PromotionByIdBloc, PromotionByIdState>(
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    orElse: () {
+                      return const CustomLoadingState();
+                    },
+                    success: (responseVoucher) {
+                      if (responseVoucher.data == null) {
+                        return Column(
+                          children: [
+                            CustomButton(
+                              btnColor: MyColors.neutralColor,
+                              borderSide: const BorderSide(
+                                color: MyColors.brandColor,
+                              ),
+                              function: () {
+                                if (response.isEmpty) {
+                                  CustomPopupBottom.showModalBottom(
+                                    context,
+                                    _dialogValidation(context),
+                                  );
+                                } else {
+                                  Navigations.pushNavigation(
+                                    context,
+                                    const PromotionPage(),
+                                  );
+                                }
+                              },
+                              widget: Row(
+                                children: [
+                                  SvgPicture.asset(ImageAssets.iconDiscount),
+                                  const SizedBox(width: 8),
+                                  const FontHeebo(
+                                    text: Variables.msgUseVoucher,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    fontColor: MyColors.blackColor,
+                                    alignment: TextAlign.start,
+                                  ),
+                                  const Spacer(),
+                                  const Icon(
+                                    Icons.keyboard_arrow_right,
+                                    color: MyColors.brandColor,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const FontHeebo(
+                                  text: Variables.total,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  fontColor: MyColors.blackColor,
+                                  alignment: TextAlign.start,
+                                ),
+                                FontHeebo(
+                                  text: totalPrice.doubleCurrencyFormatRp,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  fontColor: MyColors.brandColor,
+                                  alignment: TextAlign.start,
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 16),
+                            CustomButton(
+                              width: size.width,
+                              btnColor: MyColors.brandColor,
+                              function: () {},
+                              widget: const FontHeebo(
+                                text: Variables.btnCheckout,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                fontColor: MyColors.neutralColor,
+                                alignment: TextAlign.start,
+                              ),
+                            ),
+                          ],
+                        );
+                      } else {
+                        double totalDiscount =
+                            (responseVoucher.data!.attributes!.value!) *
+                                (totalPrice.toDouble());
+                        double grandTotal = totalPrice - totalDiscount;
+                        return Column(
+                          children: [
+                            const FontHeebo(
+                              text: Variables.totalCart,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              fontColor: MyColors.blackColor,
+                              alignment: TextAlign.center,
+                            ),
+                            const SizedBox(height: 8),
+                            const CustomSeperator(
+                              width: 180,
+                              colorSeperator: MyColors.neutral50Color,
+                            ),
+                            const SizedBox(height: 16),
+                            CustomRow(
+                              title: Variables.total,
+                              value: totalPrice.doubleCurrencyFormatRp,
+                            ),
+                            const SizedBox(height: 16),
+                            CustomRow(
+                              title: Variables.discount,
+                              value: totalDiscount.doubleCurrencyFormatRp,
+                            ),
+                            const SizedBox(height: 16),
+                            CustomRow(
+                              title: Variables.grandTotal,
+                              value: grandTotal.doubleCurrencyFormatRp,
+                            ),
+                            const SizedBox(height: 16),
+                            CustomButton(
+                              width: size.width,
+                              btnColor: MyColors.brandColor,
+                              function: () {},
+                              widget: const FontHeebo(
+                                text: Variables.btnCheckout,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                fontColor: MyColors.neutralColor,
+                                alignment: TextAlign.start,
+                              ),
+                            ),
+                          ],
+                        );
+                      }
+                    },
+                    error: (error) {
+                      return FontHeebo(
+                        text: error,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        fontColor: MyColors.redColor,
+                        alignment: TextAlign.center,
+                      );
+                    },
+                  );
+                },
+              )

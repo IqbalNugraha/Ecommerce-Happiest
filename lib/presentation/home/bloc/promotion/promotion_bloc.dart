@@ -1,5 +1,5 @@
 import 'package:ecommerce_final_task/data/datasources/promotion/promotion_remote_datasource.dart';
-import 'package:ecommerce_final_task/data/models/responses/promotion/promotion_response_model.dart';
+import 'package:ecommerce_final_task/data/models/responses/promotion/list_promotion_response_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

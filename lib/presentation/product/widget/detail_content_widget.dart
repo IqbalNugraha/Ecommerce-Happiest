@@ -1,3 +1,4 @@
+import 'package:ecommerce_final_task/common/components/custom_row.dart';
 import 'package:ecommerce_final_task/common/extensions/ext_format_currency.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class DetailContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    
+
     return SliverList(
       delegate: SliverChildListDelegate(
         [
@@ -35,8 +36,7 @@ class DetailContentWidget extends StatelessWidget {
                   alignment: TextAlign.start,
                 ),
                 FontHeebo(
-                  text: int.parse(data.attributes!.price!)
-                      .intCurrencyFormatRp,
+                  text: int.parse(data.attributes!.price!).intCurrencyFormatRp,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   fontColor: MyColors.brandColor,
@@ -46,14 +46,14 @@ class DetailContentWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          _componentDetail(
-            Variables.stock,
-            data.attributes!.stock.toString(),
+          CustomRow(
+            title: Variables.stock,
+            value: data.attributes!.stock.toString(),
           ),
           const SizedBox(height: 16),
-          _componentDetail(
-            Variables.sendFrom,
-            data.attributes!.city!,
+          CustomRow(
+            title: Variables.sendFrom,
+            value: data.attributes!.city!,
           ),
           const SizedBox(height: 16),
           const CustomTabbar(
@@ -101,44 +101,6 @@ class DetailContentWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 200),
-        ],
-      ),
-    );
-  }
-
-  Widget _componentDetail(String title, String value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 100,
-            child: FontHeebo(
-              text: title,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              fontColor: MyColors.blackColor,
-              alignment: TextAlign.start,
-            ),
-          ),
-          const SizedBox(width: 4),
-          const FontHeebo(
-            text: ":",
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-            fontColor: MyColors.blackColor,
-            alignment: TextAlign.start,
-          ),
-          const SizedBox(width: 4),
-          Expanded(
-            child: FontHeebo(
-              text: value,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              fontColor: MyColors.blackColor,
-              alignment: TextAlign.start,
-            ),
-          ),
         ],
       ),
     );

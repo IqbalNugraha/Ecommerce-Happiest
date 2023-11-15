@@ -95,7 +95,10 @@ class _PromotionPageState extends State<PromotionPage> {
                 )
               ],
             ),
-            VoucherSaveWidget(isSelected: _isSelected),
+            VoucherSaveWidget(
+              isSelected: _isSelected,
+              idVoucher: _idVoucher,
+            ),
           ],
         ),
       ),

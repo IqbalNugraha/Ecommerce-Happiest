@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'promotion_bloc.dart';
+part of 'user_address_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,65 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$PromotionEvent {
+mixin _$UserAddressEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllPromotions,
+    required TResult Function() getAllUserAddress,
+    required TResult Function(bool isDefault) getUserAddressByDefault,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllPromotions,
+    TResult? Function()? getAllUserAddress,
+    TResult? Function(bool isDefault)? getUserAddressByDefault,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllPromotions,
+    TResult Function()? getAllUserAddress,
+    TResult Function(bool isDefault)? getUserAddressByDefault,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllPromotions value) getAllPromotions,
+    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_GetUserAddressByDefault value)
+        getUserAddressByDefault,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllPromotions value)? getAllPromotions,
+    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllPromotions value)? getAllPromotions,
+    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PromotionEventCopyWith<$Res> {
-  factory $PromotionEventCopyWith(
-          PromotionEvent value, $Res Function(PromotionEvent) then) =
-      _$PromotionEventCopyWithImpl<$Res, PromotionEvent>;
+abstract class $UserAddressEventCopyWith<$Res> {
+  factory $UserAddressEventCopyWith(
+          UserAddressEvent value, $Res Function(UserAddressEvent) then) =
+      _$UserAddressEventCopyWithImpl<$Res, UserAddressEvent>;
 }
 
 /// @nodoc
-class _$PromotionEventCopyWithImpl<$Res, $Val extends PromotionEvent>
-    implements $PromotionEventCopyWith<$Res> {
-  _$PromotionEventCopyWithImpl(this._value, this._then);
+class _$UserAddressEventCopyWithImpl<$Res, $Val extends UserAddressEvent>
+    implements $UserAddressEventCopyWith<$Res> {
+  _$UserAddressEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +90,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$PromotionEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$UserAddressEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -97,7 +104,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'PromotionEvent.started()';
+    return 'UserAddressEvent.started()';
   }
 
   @override
@@ -113,7 +120,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllPromotions,
+    required TResult Function() getAllUserAddress,
+    required TResult Function(bool isDefault) getUserAddressByDefault,
   }) {
     return started();
   }
@@ -122,7 +130,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllPromotions,
+    TResult? Function()? getAllUserAddress,
+    TResult? Function(bool isDefault)? getUserAddressByDefault,
   }) {
     return started?.call();
   }
@@ -131,7 +140,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllPromotions,
+    TResult Function()? getAllUserAddress,
+    TResult Function(bool isDefault)? getUserAddressByDefault,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +154,9 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllPromotions value) getAllPromotions,
+    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_GetUserAddressByDefault value)
+        getUserAddressByDefault,
   }) {
     return started(this);
   }
@@ -153,7 +165,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllPromotions value)? getAllPromotions,
+    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
   }) {
     return started?.call(this);
   }
@@ -162,7 +175,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllPromotions value)? getAllPromotions,
+    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -172,40 +186,40 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements PromotionEvent {
+abstract class _Started implements UserAddressEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetAllPromotionsImplCopyWith<$Res> {
-  factory _$$GetAllPromotionsImplCopyWith(_$GetAllPromotionsImpl value,
-          $Res Function(_$GetAllPromotionsImpl) then) =
-      __$$GetAllPromotionsImplCopyWithImpl<$Res>;
+abstract class _$$GetAllUserAddressImplCopyWith<$Res> {
+  factory _$$GetAllUserAddressImplCopyWith(_$GetAllUserAddressImpl value,
+          $Res Function(_$GetAllUserAddressImpl) then) =
+      __$$GetAllUserAddressImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAllPromotionsImplCopyWithImpl<$Res>
-    extends _$PromotionEventCopyWithImpl<$Res, _$GetAllPromotionsImpl>
-    implements _$$GetAllPromotionsImplCopyWith<$Res> {
-  __$$GetAllPromotionsImplCopyWithImpl(_$GetAllPromotionsImpl _value,
-      $Res Function(_$GetAllPromotionsImpl) _then)
+class __$$GetAllUserAddressImplCopyWithImpl<$Res>
+    extends _$UserAddressEventCopyWithImpl<$Res, _$GetAllUserAddressImpl>
+    implements _$$GetAllUserAddressImplCopyWith<$Res> {
+  __$$GetAllUserAddressImplCopyWithImpl(_$GetAllUserAddressImpl _value,
+      $Res Function(_$GetAllUserAddressImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAllPromotionsImpl implements _GetAllPromotions {
-  const _$GetAllPromotionsImpl();
+class _$GetAllUserAddressImpl implements _GetAllUserAddress {
+  const _$GetAllUserAddressImpl();
 
   @override
   String toString() {
-    return 'PromotionEvent.getAllPromotions()';
+    return 'UserAddressEvent.getAllUserAddress()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllPromotionsImpl);
+        (other.runtimeType == runtimeType && other is _$GetAllUserAddressImpl);
   }
 
   @override
@@ -215,29 +229,32 @@ class _$GetAllPromotionsImpl implements _GetAllPromotions {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllPromotions,
+    required TResult Function() getAllUserAddress,
+    required TResult Function(bool isDefault) getUserAddressByDefault,
   }) {
-    return getAllPromotions();
+    return getAllUserAddress();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllPromotions,
+    TResult? Function()? getAllUserAddress,
+    TResult? Function(bool isDefault)? getUserAddressByDefault,
   }) {
-    return getAllPromotions?.call();
+    return getAllUserAddress?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllPromotions,
+    TResult Function()? getAllUserAddress,
+    TResult Function(bool isDefault)? getUserAddressByDefault,
     required TResult orElse(),
   }) {
-    if (getAllPromotions != null) {
-      return getAllPromotions();
+    if (getAllUserAddress != null) {
+      return getAllUserAddress();
     }
     return orElse();
   }
@@ -246,45 +263,194 @@ class _$GetAllPromotionsImpl implements _GetAllPromotions {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllPromotions value) getAllPromotions,
+    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_GetUserAddressByDefault value)
+        getUserAddressByDefault,
   }) {
-    return getAllPromotions(this);
+    return getAllUserAddress(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllPromotions value)? getAllPromotions,
+    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
   }) {
-    return getAllPromotions?.call(this);
+    return getAllUserAddress?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllPromotions value)? getAllPromotions,
+    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
     required TResult orElse(),
   }) {
-    if (getAllPromotions != null) {
-      return getAllPromotions(this);
+    if (getAllUserAddress != null) {
+      return getAllUserAddress(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAllPromotions implements PromotionEvent {
-  const factory _GetAllPromotions() = _$GetAllPromotionsImpl;
+abstract class _GetAllUserAddress implements UserAddressEvent {
+  const factory _GetAllUserAddress() = _$GetAllUserAddressImpl;
 }
 
 /// @nodoc
-mixin _$PromotionState {
+abstract class _$$GetUserAddressByDefaultImplCopyWith<$Res> {
+  factory _$$GetUserAddressByDefaultImplCopyWith(
+          _$GetUserAddressByDefaultImpl value,
+          $Res Function(_$GetUserAddressByDefaultImpl) then) =
+      __$$GetUserAddressByDefaultImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isDefault});
+}
+
+/// @nodoc
+class __$$GetUserAddressByDefaultImplCopyWithImpl<$Res>
+    extends _$UserAddressEventCopyWithImpl<$Res, _$GetUserAddressByDefaultImpl>
+    implements _$$GetUserAddressByDefaultImplCopyWith<$Res> {
+  __$$GetUserAddressByDefaultImplCopyWithImpl(
+      _$GetUserAddressByDefaultImpl _value,
+      $Res Function(_$GetUserAddressByDefaultImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isDefault = null,
+  }) {
+    return _then(_$GetUserAddressByDefaultImpl(
+      null == isDefault
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetUserAddressByDefaultImpl implements _GetUserAddressByDefault {
+  const _$GetUserAddressByDefaultImpl(this.isDefault);
+
+  @override
+  final bool isDefault;
+
+  @override
+  String toString() {
+    return 'UserAddressEvent.getUserAddressByDefault(isDefault: $isDefault)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserAddressByDefaultImpl &&
+            (identical(other.isDefault, isDefault) ||
+                other.isDefault == isDefault));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isDefault);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserAddressByDefaultImplCopyWith<_$GetUserAddressByDefaultImpl>
+      get copyWith => __$$GetUserAddressByDefaultImplCopyWithImpl<
+          _$GetUserAddressByDefaultImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getAllUserAddress,
+    required TResult Function(bool isDefault) getUserAddressByDefault,
+  }) {
+    return getUserAddressByDefault(isDefault);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getAllUserAddress,
+    TResult? Function(bool isDefault)? getUserAddressByDefault,
+  }) {
+    return getUserAddressByDefault?.call(isDefault);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getAllUserAddress,
+    TResult Function(bool isDefault)? getUserAddressByDefault,
+    required TResult orElse(),
+  }) {
+    if (getUserAddressByDefault != null) {
+      return getUserAddressByDefault(isDefault);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_GetUserAddressByDefault value)
+        getUserAddressByDefault,
+  }) {
+    return getUserAddressByDefault(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
+  }) {
+    return getUserAddressByDefault?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
+    required TResult orElse(),
+  }) {
+    if (getUserAddressByDefault != null) {
+      return getUserAddressByDefault(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetUserAddressByDefault implements UserAddressEvent {
+  const factory _GetUserAddressByDefault(final bool isDefault) =
+      _$GetUserAddressByDefaultImpl;
+
+  bool get isDefault;
+  @JsonKey(ignore: true)
+  _$$GetUserAddressByDefaultImplCopyWith<_$GetUserAddressByDefaultImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$UserAddressState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(UserAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -292,7 +458,7 @@ mixin _$PromotionState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(UserAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -300,7 +466,7 @@ mixin _$PromotionState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(UserAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -333,16 +499,16 @@ mixin _$PromotionState {
 }
 
 /// @nodoc
-abstract class $PromotionStateCopyWith<$Res> {
-  factory $PromotionStateCopyWith(
-          PromotionState value, $Res Function(PromotionState) then) =
-      _$PromotionStateCopyWithImpl<$Res, PromotionState>;
+abstract class $UserAddressStateCopyWith<$Res> {
+  factory $UserAddressStateCopyWith(
+          UserAddressState value, $Res Function(UserAddressState) then) =
+      _$UserAddressStateCopyWithImpl<$Res, UserAddressState>;
 }
 
 /// @nodoc
-class _$PromotionStateCopyWithImpl<$Res, $Val extends PromotionState>
-    implements $PromotionStateCopyWith<$Res> {
-  _$PromotionStateCopyWithImpl(this._value, this._then);
+class _$UserAddressStateCopyWithImpl<$Res, $Val extends UserAddressState>
+    implements $UserAddressStateCopyWith<$Res> {
+  _$UserAddressStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -359,7 +525,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$PromotionStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -373,7 +539,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'PromotionState.initial()';
+    return 'UserAddressState.initial()';
   }
 
   @override
@@ -390,7 +556,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(UserAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -401,7 +567,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(UserAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -412,7 +578,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(UserAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -460,7 +626,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements PromotionState {
+abstract class _Initial implements UserAddressState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -473,7 +639,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$PromotionStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -487,7 +653,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'PromotionState.loading()';
+    return 'UserAddressState.loading()';
   }
 
   @override
@@ -504,7 +670,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(UserAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -515,7 +681,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(UserAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -526,7 +692,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(UserAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -574,7 +740,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements PromotionState {
+abstract class _Loading implements UserAddressState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -584,12 +750,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ListPromotionResponseModel data});
+  $Res call({UserAddressResponseModel data});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$PromotionStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -604,7 +770,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as ListPromotionResponseModel,
+              as UserAddressResponseModel,
     ));
   }
 }
@@ -615,11 +781,11 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl(this.data);
 
   @override
-  final ListPromotionResponseModel data;
+  final UserAddressResponseModel data;
 
   @override
   String toString() {
-    return 'PromotionState.success(data: $data)';
+    return 'UserAddressState.success(data: $data)';
   }
 
   @override
@@ -644,7 +810,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(UserAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return success(data);
@@ -655,7 +821,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(UserAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return success?.call(data);
@@ -666,7 +832,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(UserAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -714,10 +880,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements PromotionState {
-  const factory _Success(final ListPromotionResponseModel data) = _$SuccessImpl;
+abstract class _Success implements UserAddressState {
+  const factory _Success(final UserAddressResponseModel data) = _$SuccessImpl;
 
-  ListPromotionResponseModel get data;
+  UserAddressResponseModel get data;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -734,7 +900,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$PromotionStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -764,7 +930,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'PromotionState.error(error: $error)';
+    return 'UserAddressState.error(error: $error)';
   }
 
   @override
@@ -789,7 +955,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(UserAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -800,7 +966,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(UserAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -811,7 +977,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(UserAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -859,7 +1025,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements PromotionState {
+abstract class _Error implements UserAddressState {
   const factory _Error(final String error) = _$ErrorImpl;
 
   String get error;

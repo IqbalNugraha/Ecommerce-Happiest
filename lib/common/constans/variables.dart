@@ -17,7 +17,7 @@ class Variables {
   static const String password = "Password";
   static const String hintEmail = "Input your email address";
   static const String hintPassword = "Input your password";
-  static const String btnLogin = "Login";
+
   static const String notHaveAccount = "Not have an account?";
   static const String register = "Register";
   static const String forgotPassword = "Forgot Password?";
@@ -28,7 +28,7 @@ class Variables {
   static const String rePassword = "Retype Password";
   static const String hintRePassword = "Input your retype password";
   static const String hintName = "Input your fullname";
-  static const String btnRegister = "Register";
+
   static const String haveAccount = "Have an account?";
   static const String login = "Login";
 
@@ -55,17 +55,34 @@ class Variables {
   static const String review = "Review";
 
   //cart
-  static const String total = "Total :";
+  static const String total = "Total";
+  static const String discount = "Discount";
+  static const String grandTotal = "Grand Total";
   static const String addToCart = "Add to Cart";
   static const String cartAppbar = "Cart Page";
-  static const String btnCheckout = "Check Out";
+  static const String totalCart = "Total Cart";
 
   //voucher
   static const String myVoucher = "My Voucher";
   static const String btnSaveVoucher = "Save Voucher";
 
+  //checkout
+  static const String checkoutAppbar = "Checkout Page";
+
+  //user-address
+  static const String checkoutAddress = "Checkout Address";
+
+  //button
+  static const String btnOkay = "Okay";
+  static const String btnLogin = "Login";
+  static const String btnRegister = "Register";
+  static const String btnCheckout = "Check Out";
+  static const String btnSeeAll = "See All";
+
   //message
   static const String msgCantEmpty = "Field can't empty";
+  static const String msgVoucherCantUse = "Cart is empty, can't use voucher";
+  static const String msgCartEmpty = "Cart is empty, can't checkout";
   static const String msgPasswordEmpty = "Password can't empty";
   static const String msgPasswordNotSame = "Password is not same";
   static const String msgSuccessCart = "Success add to Cart";

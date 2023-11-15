@@ -53,8 +53,8 @@ class _HomeProductsWidgetState extends State<HomeProductsWidget> {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: Variables.shadowRadius1,
                 widget: const FontHeebo(
-                  text: Variables.categories,
-                  fontSize: 14,
+                  text: Variables.btnSeeAll,
+                  fontSize: 12,
                   fontWeight: FontWeight.w500,
                   fontColor: MyColors.brandColor,
                   alignment: TextAlign.start,

@@ -43,7 +43,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   }
 
   void checkAuth() async {
-    final isLogin = await LocalRemoteDatasource().isLogin();
+    final isLogin = await LocalDatasource().isLogin();
     if (isLogin == true) {
       setState(() {
         _pages = [

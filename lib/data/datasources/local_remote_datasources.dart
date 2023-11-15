@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/responses/auth/auth_response_model.dart';
 
-class LocalRemoteDatasource {
+class LocalDatasource {
   Future<void> saveAuthData(AuthResponseModel model) async {
     final pref = await SharedPreferences.getInstance();
     await pref.setString('auth', model.toJson());
@@ -16,6 +16,7 @@ class LocalRemoteDatasource {
   Future<String> getToken() async {
     final pref = await SharedPreferences.getInstance();
     final authJson = pref.getString('auth') ?? '';
+    print(authJson);
     final authData = AuthResponseModel.fromJson(authJson);
     return authData.jwt ?? '';
   }
@@ -30,6 +31,7 @@ class LocalRemoteDatasource {
   Future<bool> isLogin() async {
     final pref = await SharedPreferences.getInstance();
     final authJson = pref.getString('auth') ?? '';
+    print(authJson);
     return authJson.isNotEmpty;
   }
 }

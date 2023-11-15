@@ -184,11 +184,21 @@ class _LoginPageState extends State<LoginPage> {
                         state.maybeWhen(
                           orElse: () {},
                           success: (response) {
-                            LocalRemoteDatasource().saveAuthData(response);
-                            Navigations.pushAndRemoveNavigation(
-                              context,
-                              const BottomNavigationPage(),
-                            );
+                            if (response.error == null) {
+                              LocalDatasource().saveAuthData(response);
+                              Navigations.pushAndRemoveNavigation(
+                                context,
+                                const BottomNavigationPage(),
+                              );
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    response.error!.message.toString(),
+                                  ),
+                                ),
+                              );
+                            }
                           },
                           error: (error) {
                             ScaffoldMessenger.of(context).showSnackBar(

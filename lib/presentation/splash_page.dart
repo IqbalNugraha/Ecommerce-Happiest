@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _checkAuth() async {
-    final auth = await LocalRemoteDatasource().isLogin();
+    final auth = await LocalDatasource().isLogin();
     if (auth == true) {
       Future.delayed(const Duration(seconds: 3), () {
         Navigator.pushAndRemoveUntil(

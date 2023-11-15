@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'promotion_bloc.dart';
+part of 'promotion_by_id_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$PromotionEvent {
+mixin _$PromotionByIdEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllPromotions,
+    required TResult Function(int id) getPromotionById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllPromotions,
+    TResult? Function(int id)? getPromotionById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllPromotions,
+    TResult Function(int id)? getPromotionById,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllPromotions value) getAllPromotions,
+    required TResult Function(_GetPromotionById value) getPromotionById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllPromotions value)? getAllPromotions,
+    TResult? Function(_GetPromotionById value)? getPromotionById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllPromotions value)? getAllPromotions,
+    TResult Function(_GetPromotionById value)? getPromotionById,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PromotionEventCopyWith<$Res> {
-  factory $PromotionEventCopyWith(
-          PromotionEvent value, $Res Function(PromotionEvent) then) =
-      _$PromotionEventCopyWithImpl<$Res, PromotionEvent>;
+abstract class $PromotionByIdEventCopyWith<$Res> {
+  factory $PromotionByIdEventCopyWith(
+          PromotionByIdEvent value, $Res Function(PromotionByIdEvent) then) =
+      _$PromotionByIdEventCopyWithImpl<$Res, PromotionByIdEvent>;
 }
 
 /// @nodoc
-class _$PromotionEventCopyWithImpl<$Res, $Val extends PromotionEvent>
-    implements $PromotionEventCopyWith<$Res> {
-  _$PromotionEventCopyWithImpl(this._value, this._then);
+class _$PromotionByIdEventCopyWithImpl<$Res, $Val extends PromotionByIdEvent>
+    implements $PromotionByIdEventCopyWith<$Res> {
+  _$PromotionByIdEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +83,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$PromotionEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$PromotionByIdEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -97,7 +97,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'PromotionEvent.started()';
+    return 'PromotionByIdEvent.started()';
   }
 
   @override
@@ -113,7 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllPromotions,
+    required TResult Function(int id) getPromotionById,
   }) {
     return started();
   }
@@ -122,7 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllPromotions,
+    TResult? Function(int id)? getPromotionById,
   }) {
     return started?.call();
   }
@@ -131,7 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllPromotions,
+    TResult Function(int id)? getPromotionById,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +144,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllPromotions value) getAllPromotions,
+    required TResult Function(_GetPromotionById value) getPromotionById,
   }) {
     return started(this);
   }
@@ -153,7 +153,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllPromotions value)? getAllPromotions,
+    TResult? Function(_GetPromotionById value)? getPromotionById,
   }) {
     return started?.call(this);
   }
@@ -162,7 +162,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllPromotions value)? getAllPromotions,
+    TResult Function(_GetPromotionById value)? getPromotionById,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -172,72 +172,99 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements PromotionEvent {
+abstract class _Started implements PromotionByIdEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetAllPromotionsImplCopyWith<$Res> {
-  factory _$$GetAllPromotionsImplCopyWith(_$GetAllPromotionsImpl value,
-          $Res Function(_$GetAllPromotionsImpl) then) =
-      __$$GetAllPromotionsImplCopyWithImpl<$Res>;
+abstract class _$$GetPromotionByIdImplCopyWith<$Res> {
+  factory _$$GetPromotionByIdImplCopyWith(_$GetPromotionByIdImpl value,
+          $Res Function(_$GetPromotionByIdImpl) then) =
+      __$$GetPromotionByIdImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
 }
 
 /// @nodoc
-class __$$GetAllPromotionsImplCopyWithImpl<$Res>
-    extends _$PromotionEventCopyWithImpl<$Res, _$GetAllPromotionsImpl>
-    implements _$$GetAllPromotionsImplCopyWith<$Res> {
-  __$$GetAllPromotionsImplCopyWithImpl(_$GetAllPromotionsImpl _value,
-      $Res Function(_$GetAllPromotionsImpl) _then)
+class __$$GetPromotionByIdImplCopyWithImpl<$Res>
+    extends _$PromotionByIdEventCopyWithImpl<$Res, _$GetPromotionByIdImpl>
+    implements _$$GetPromotionByIdImplCopyWith<$Res> {
+  __$$GetPromotionByIdImplCopyWithImpl(_$GetPromotionByIdImpl _value,
+      $Res Function(_$GetPromotionByIdImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetPromotionByIdImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$GetAllPromotionsImpl implements _GetAllPromotions {
-  const _$GetAllPromotionsImpl();
+class _$GetPromotionByIdImpl implements _GetPromotionById {
+  const _$GetPromotionByIdImpl(this.id);
+
+  @override
+  final int id;
 
   @override
   String toString() {
-    return 'PromotionEvent.getAllPromotions()';
+    return 'PromotionByIdEvent.getPromotionById(id: $id)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllPromotionsImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetPromotionByIdImpl &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPromotionByIdImplCopyWith<_$GetPromotionByIdImpl> get copyWith =>
+      __$$GetPromotionByIdImplCopyWithImpl<_$GetPromotionByIdImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllPromotions,
+    required TResult Function(int id) getPromotionById,
   }) {
-    return getAllPromotions();
+    return getPromotionById(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllPromotions,
+    TResult? Function(int id)? getPromotionById,
   }) {
-    return getAllPromotions?.call();
+    return getPromotionById?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllPromotions,
+    TResult Function(int id)? getPromotionById,
     required TResult orElse(),
   }) {
-    if (getAllPromotions != null) {
-      return getAllPromotions();
+    if (getPromotionById != null) {
+      return getPromotionById(id);
     }
     return orElse();
   }
@@ -246,45 +273,50 @@ class _$GetAllPromotionsImpl implements _GetAllPromotions {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllPromotions value) getAllPromotions,
+    required TResult Function(_GetPromotionById value) getPromotionById,
   }) {
-    return getAllPromotions(this);
+    return getPromotionById(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllPromotions value)? getAllPromotions,
+    TResult? Function(_GetPromotionById value)? getPromotionById,
   }) {
-    return getAllPromotions?.call(this);
+    return getPromotionById?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllPromotions value)? getAllPromotions,
+    TResult Function(_GetPromotionById value)? getPromotionById,
     required TResult orElse(),
   }) {
-    if (getAllPromotions != null) {
-      return getAllPromotions(this);
+    if (getPromotionById != null) {
+      return getPromotionById(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAllPromotions implements PromotionEvent {
-  const factory _GetAllPromotions() = _$GetAllPromotionsImpl;
+abstract class _GetPromotionById implements PromotionByIdEvent {
+  const factory _GetPromotionById(final int id) = _$GetPromotionByIdImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$GetPromotionByIdImplCopyWith<_$GetPromotionByIdImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$PromotionState {
+mixin _$PromotionByIdState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(PromotionResponseModel data) success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -292,7 +324,7 @@ mixin _$PromotionState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(PromotionResponseModel data)? success,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -300,7 +332,7 @@ mixin _$PromotionState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(PromotionResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -333,16 +365,16 @@ mixin _$PromotionState {
 }
 
 /// @nodoc
-abstract class $PromotionStateCopyWith<$Res> {
-  factory $PromotionStateCopyWith(
-          PromotionState value, $Res Function(PromotionState) then) =
-      _$PromotionStateCopyWithImpl<$Res, PromotionState>;
+abstract class $PromotionByIdStateCopyWith<$Res> {
+  factory $PromotionByIdStateCopyWith(
+          PromotionByIdState value, $Res Function(PromotionByIdState) then) =
+      _$PromotionByIdStateCopyWithImpl<$Res, PromotionByIdState>;
 }
 
 /// @nodoc
-class _$PromotionStateCopyWithImpl<$Res, $Val extends PromotionState>
-    implements $PromotionStateCopyWith<$Res> {
-  _$PromotionStateCopyWithImpl(this._value, this._then);
+class _$PromotionByIdStateCopyWithImpl<$Res, $Val extends PromotionByIdState>
+    implements $PromotionByIdStateCopyWith<$Res> {
+  _$PromotionByIdStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -359,7 +391,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$PromotionStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$PromotionByIdStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -373,7 +405,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'PromotionState.initial()';
+    return 'PromotionByIdState.initial()';
   }
 
   @override
@@ -390,7 +422,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(PromotionResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -401,7 +433,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(PromotionResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -412,7 +444,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(PromotionResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -460,7 +492,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements PromotionState {
+abstract class _Initial implements PromotionByIdState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -473,7 +505,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$PromotionStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$PromotionByIdStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -487,7 +519,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'PromotionState.loading()';
+    return 'PromotionByIdState.loading()';
   }
 
   @override
@@ -504,7 +536,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(PromotionResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -515,7 +547,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(PromotionResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -526,7 +558,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(PromotionResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -574,7 +606,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements PromotionState {
+abstract class _Loading implements PromotionByIdState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -584,12 +616,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ListPromotionResponseModel data});
+  $Res call({PromotionResponseModel data});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$PromotionStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$PromotionByIdStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -604,7 +636,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as ListPromotionResponseModel,
+              as PromotionResponseModel,
     ));
   }
 }
@@ -615,11 +647,11 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl(this.data);
 
   @override
-  final ListPromotionResponseModel data;
+  final PromotionResponseModel data;
 
   @override
   String toString() {
-    return 'PromotionState.success(data: $data)';
+    return 'PromotionByIdState.success(data: $data)';
   }
 
   @override
@@ -644,7 +676,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(PromotionResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return success(data);
@@ -655,7 +687,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(PromotionResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return success?.call(data);
@@ -666,7 +698,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(PromotionResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -714,10 +746,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements PromotionState {
-  const factory _Success(final ListPromotionResponseModel data) = _$SuccessImpl;
+abstract class _Success implements PromotionByIdState {
+  const factory _Success(final PromotionResponseModel data) = _$SuccessImpl;
 
-  ListPromotionResponseModel get data;
+  PromotionResponseModel get data;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -734,7 +766,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$PromotionStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$PromotionByIdStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -764,7 +796,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'PromotionState.error(error: $error)';
+    return 'PromotionByIdState.error(error: $error)';
   }
 
   @override
@@ -789,7 +821,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ListPromotionResponseModel data) success,
+    required TResult Function(PromotionResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -800,7 +832,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ListPromotionResponseModel data)? success,
+    TResult? Function(PromotionResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -811,7 +843,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ListPromotionResponseModel data)? success,
+    TResult Function(PromotionResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -859,7 +891,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements PromotionState {
+abstract class _Error implements PromotionByIdState {
   const factory _Error(final String error) = _$ErrorImpl;
 
   String get error;

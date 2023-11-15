@@ -34,4 +34,5 @@ class MyColors {
   static const Color semiBlackColor = Color(0xFF4c4c4c);
 
   static const Color shadow = Color.fromARGB(73, 46, 43, 43);
+  static const Color seperator = Color(0XFFF4F6FA);
 }
