@@ -17,6 +17,9 @@ class Variables {
   static const String password = "Password";
   static const String hintEmail = "Input your email address";
   static const String hintPassword = "Input your password";
+  static const String hintPostalCode = "Input your postal code";
+  static const String hintAddress = "Input your home address";
+  static const String hintPhoneNumber = "Input your phone number";
 
   static const String notHaveAccount = "Not have an account?";
   static const String register = "Register";
@@ -71,6 +74,15 @@ class Variables {
 
   //user-address
   static const String checkoutAddress = "Checkout Address";
+  static const String userAddress = "User Address";
+  static const String addAddress = "Add Address";
+  static const String receiverName = "Receiver Name";
+  static const String receiverPhone = "Receiver Phone Number";
+  static const String receiverAddress = "Receiver Address";
+  static const String receiverProvince = "Receiver Province";
+  static const String receiverCity = "Receiver City/Sub City";
+  static const String receiverSubdistrict = "Receiver Subdistrict";
+  static const String receiverPostalCode = "Receiver Postal Code";
 
   //button
   static const String btnOkay = "Okay";
@@ -78,6 +90,8 @@ class Variables {
   static const String btnRegister = "Register";
   static const String btnCheckout = "Check Out";
   static const String btnSeeAll = "See All";
+  static const String btnAddAddress = "Add Address";
+  static const String btnSave = "Save";
 
   //message
   static const String msgCantEmpty = "Field can't empty";
@@ -87,6 +101,7 @@ class Variables {
   static const String msgPasswordNotSame = "Password is not same";
   static const String msgSuccessCart = "Success add to Cart";
   static const String msgUseVoucher = "Use some Voucher?";
+  static const String msgEmptyAddress = "Please input your home address";
   static const String msgHttp408 = "Request Time Out";
   static const String msgHttpService = "Internal Services Error";
 

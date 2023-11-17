@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 
 import '../constans/colors.dart';
 
-class CustomAppbar extends StatelessWidget {
+class CustomAppbarAdd extends StatelessWidget {
   final String title;
   final double fontSize, paddingTop;
   final double? height;
   final Color bgColor, textColor;
   final FontWeight fontWeight;
-  final void Function()? function;
-  const CustomAppbar({
+  final VoidCallback function, addFunction;
+  const CustomAppbarAdd({
     required this.title,
     required this.function,
+    required this.addFunction,
     this.bgColor = Colors.transparent,
     this.textColor = MyColors.blackColor,
     this.paddingTop = 24,
@@ -49,6 +50,17 @@ class CustomAppbar extends StatelessWidget {
               onTap: function,
               child: Icon(
                 Icons.arrow_back,
+                color: textColor,
+                size: 28,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 16,
+            child: GestureDetector(
+              onTap: addFunction,
+              child: Icon(
+                Icons.add,
                 color: textColor,
                 size: 28,
               ),

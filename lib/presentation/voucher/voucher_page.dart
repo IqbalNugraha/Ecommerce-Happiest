@@ -31,7 +31,7 @@ class _PromotionPageState extends State<PromotionPage> {
           children: [
             Column(
               children: [
-                CustomAppBar(
+                CustomAppbar(
                   title: Variables.myVoucher,
                   function: () {
                     Navigations.popNavigation(context);

@@ -1,13 +1,15 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
+
 class UserAddressRequestModel {
-  final ModelUserAddress data;
+  final Data data;
   UserAddressRequestModel({
     required this.data,
   });
 
   UserAddressRequestModel copyWith({
-    ModelUserAddress? data,
+    Data? data,
   }) {
     return UserAddressRequestModel(
       data: data ?? this.data,
@@ -22,7 +24,7 @@ class UserAddressRequestModel {
 
   factory UserAddressRequestModel.fromMap(Map<String, dynamic> map) {
     return UserAddressRequestModel(
-      data: ModelUserAddress.fromMap(map['data'] as Map<String, dynamic>),
+      data: Data.fromMap(map['data'] as Map<String, dynamic>),
     );
   }
 
@@ -31,9 +33,22 @@ class UserAddressRequestModel {
   factory UserAddressRequestModel.fromJson(String source) =>
       UserAddressRequestModel.fromMap(
           json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() => 'UserAddressRequestModel(data: $data)';
+
+  @override
+  bool operator ==(covariant UserAddressRequestModel other) {
+    if (identical(this, other)) return true;
+
+    return other.data == data;
+  }
+
+  @override
+  int get hashCode => data.hashCode;
 }
 
-class ModelUserAddress {
+class Data {
   final String namaReceiver;
   final String phoneNumber;
   final String address;
@@ -42,7 +57,8 @@ class ModelUserAddress {
   final String subdistrict;
   final String postalCode;
   final bool isDefault;
-  ModelUserAddress({
+  final List<int> user;
+  Data({
     required this.namaReceiver,
     required this.phoneNumber,
     required this.address,
@@ -51,9 +67,10 @@ class ModelUserAddress {
     required this.subdistrict,
     required this.postalCode,
     required this.isDefault,
+    required this.user,
   });
 
-  ModelUserAddress copyWith({
+  Data copyWith({
     String? namaReceiver,
     String? phoneNumber,
     String? address,
@@ -62,8 +79,9 @@ class ModelUserAddress {
     String? subdistrict,
     String? postalCode,
     bool? isDefault,
+    List<int>? user,
   }) {
-    return ModelUserAddress(
+    return Data(
       namaReceiver: namaReceiver ?? this.namaReceiver,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       address: address ?? this.address,
@@ -72,6 +90,7 @@ class ModelUserAddress {
       subdistrict: subdistrict ?? this.subdistrict,
       postalCode: postalCode ?? this.postalCode,
       isDefault: isDefault ?? this.isDefault,
+      user: user ?? this.user,
     );
   }
 
@@ -85,11 +104,12 @@ class ModelUserAddress {
       'subdistrict': subdistrict,
       'postal_code': postalCode,
       'is_default': isDefault,
+      'user': user,
     };
   }
 
-  factory ModelUserAddress.fromMap(Map<String, dynamic> map) {
-    return ModelUserAddress(
+  factory Data.fromMap(Map<String, dynamic> map) {
+    return Data(
       namaReceiver: map['nama_receiver'] as String,
       phoneNumber: map['phone_number'] as String,
       address: map['address'] as String,
@@ -98,11 +118,47 @@ class ModelUserAddress {
       subdistrict: map['subdistrict'] as String,
       postalCode: map['postal_code'] as String,
       isDefault: map['is_default'] as bool,
+      user: List<int>.from(
+        (map['user'] as List<int>),
+      ),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory ModelUserAddress.fromJson(String source) =>
-      ModelUserAddress.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Data.fromJson(String source) =>
+      Data.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'Data(nama_receiver: $namaReceiver, phone_number: $phoneNumber, address: $address, province: $province, city: $city, subdistrict: $subdistrict, postal_code: $postalCode, is_default: $isDefault, user: $user)';
+  }
+
+  @override
+  bool operator ==(covariant Data other) {
+    if (identical(this, other)) return true;
+
+    return other.namaReceiver == namaReceiver &&
+        other.phoneNumber == phoneNumber &&
+        other.address == address &&
+        other.province == province &&
+        other.city == city &&
+        other.subdistrict == subdistrict &&
+        other.postalCode == postalCode &&
+        other.isDefault == isDefault &&
+        listEquals(other.user, user);
+  }
+
+  @override
+  int get hashCode {
+    return namaReceiver.hashCode ^
+        phoneNumber.hashCode ^
+        address.hashCode ^
+        province.hashCode ^
+        city.hashCode ^
+        subdistrict.hashCode ^
+        postalCode.hashCode ^
+        isDefault.hashCode ^
+        user.hashCode;
+  }
 }

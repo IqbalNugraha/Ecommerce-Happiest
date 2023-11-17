@@ -5,7 +5,7 @@ import 'package:ecommerce_final_task/common/components/custom_loading_state.dart
 import 'package:ecommerce_final_task/common/components/custom_row.dart';
 import 'package:ecommerce_final_task/common/components/custom_seperator.dart';
 import 'package:ecommerce_final_task/common/extensions/ext_format_currency.dart';
-import 'package:ecommerce_final_task/presentation/check_out/check_out_page.dart';
+import 'package:ecommerce_final_task/presentation/check_out/checkout_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

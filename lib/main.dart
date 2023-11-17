@@ -1,9 +1,13 @@
 import 'package:ecommerce_final_task/common/constans/colors.dart';
 import 'package:ecommerce_final_task/presentation/auth/bloc/login/login_bloc.dart';
+import 'package:ecommerce_final_task/presentation/check_out/bloc/add_address/add_address_bloc.dart';
 import 'package:ecommerce_final_task/presentation/check_out/bloc/user_address/user_address_bloc.dart';
 import 'package:ecommerce_final_task/presentation/home/bloc/product/product_bloc.dart';
 import 'package:ecommerce_final_task/presentation/home/bloc/promotion/promotion_bloc.dart';
 import 'package:ecommerce_final_task/presentation/splash_page.dart';
+import 'package:ecommerce_final_task/presentation/user_address/bloc/city/city_bloc.dart';
+import 'package:ecommerce_final_task/presentation/user_address/bloc/province/province_bloc.dart';
+import 'package:ecommerce_final_task/presentation/user_address/bloc/subdistrict/subdistrict_bloc.dart';
 import 'package:ecommerce_final_task/presentation/voucher/bloc/promotion_by_id/promotion_by_id_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +16,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'presentation/auth/bloc/register/register_bloc.dart';
 import 'presentation/cart/bloc/cart/cart_bloc.dart';
 import 'presentation/cart/bloc/list_cart/cart_list_bloc.dart';
+import 'presentation/user_address/bloc/raja_ongkir/raja_ongkir_bloc.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -56,6 +61,21 @@ class MainApp extends StatelessWidget {
         //user_address
         BlocProvider(
           create: (context) => UserAddressBloc(),
+        ),
+        BlocProvider(
+          create: (context) => RajaOngkirBloc(),
+        ),
+        BlocProvider(
+          create: (context) => ProvinceBloc(),
+        ),
+        BlocProvider(
+          create: (context) => CityBloc(),
+        ),
+        BlocProvider(
+          create: (context) => SubdistrictBloc(),
+        ),
+        BlocProvider(
+          create: (context) => AddAddressBloc(),
         ),
 
         //util

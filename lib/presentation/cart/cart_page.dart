@@ -24,7 +24,7 @@ class _CartPageState extends State<CartPage> {
           children: [
             Column(
               children: [
-                CustomAppBar(
+                CustomAppbar(
                   title: Variables.cartAppbar,
                   function: () {
                     Navigations.popNavigation(context);
