@@ -1,8 +1,9 @@
 import 'package:ecommerce_final_task/common/components/custom_appbar.dart';
 import 'package:ecommerce_final_task/common/components/custom_seperator.dart';
-import 'package:ecommerce_final_task/presentation/cart/widgets/cart_model.dart';
-import 'package:ecommerce_final_task/presentation/check_out/bloc/user_address/user_address_bloc.dart';
+import 'package:ecommerce_final_task/presentation/check_out/bloc/address_by_default/address_by_default_bloc.dart';
 import 'package:ecommerce_final_task/presentation/check_out/widgets/checkout_address_widget.dart';
+import 'package:ecommerce_final_task/presentation/check_out/widgets/checkout_items_widget.dart';
+import 'package:ecommerce_final_task/presentation/check_out/widgets/checkout_voucher_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,11 +12,9 @@ import '../../common/constans/navigation.dart';
 import '../../common/constans/variables.dart';
 
 class CheckoutPage extends StatefulWidget {
-  final List<CartModel> listCart;
   final double totalPrice;
   const CheckoutPage({
     super.key,
-    required this.listCart,
     required this.totalPrice,
   });
 
@@ -26,9 +25,10 @@ class CheckoutPage extends StatefulWidget {
 class _CheckoutPageState extends State<CheckoutPage> {
   @override
   void initState() {
+    print(widget.totalPrice);
     context
-        .read<UserAddressBloc>()
-        .add(const UserAddressEvent.getUserAddressByDefault(true));
+        .read<AddressByDefaultBloc>()
+        .add(const AddressByDefaultEvent.getUserAddressByDefault(true));
     super.initState();
   }
 
@@ -45,16 +45,23 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 Navigations.popNavigation(context);
               },
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
             Expanded(
               child: ListView(
-                physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.all(16),
-                children: const [
-                  CheckoutAddressWidget(),
-                  SizedBox(height: 16),
-                  CustomSeperator(
+                children: [
+                  const SizedBox(height: 16),
+                  const CheckoutAddressWidget(),
+                  const SizedBox(height: 16),
+                  const CustomSeperator(
                     colorSeperator: MyColors.greyColor,
+                  ),
+                  const SizedBox(height: 16),
+                  const Flexible(
+                    child: CheckoutItemsWidget(),
+                  ),
+                  const SizedBox(height: 16),
+                  CheckoutVoucherWidget(
+                    totalPrice: widget.totalPrice,
                   ),
                 ],
               ),

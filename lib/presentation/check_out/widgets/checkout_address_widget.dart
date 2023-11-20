@@ -1,3 +1,5 @@
+import 'package:ecommerce_final_task/presentation/check_out/bloc/address_by_default/address_by_default_bloc.dart';
+import 'package:ecommerce_final_task/presentation/check_out/widgets/component_checkout_address.dart';
 import 'package:ecommerce_final_task/presentation/user_address/user_address_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,15 +10,13 @@ import '../../../common/components/custom_loading_state.dart';
 import '../../../common/constans/colors.dart';
 import '../../../common/constans/navigation.dart';
 import '../../../common/constans/variables.dart';
-import '../bloc/user_address/user_address_bloc.dart';
-import 'component_address.dart';
 
 class CheckoutAddressWidget extends StatelessWidget {
   const CheckoutAddressWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserAddressBloc, UserAddressState>(
+    return BlocBuilder<AddressByDefaultBloc, AddressByDefaultState>(
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () {
@@ -24,8 +24,17 @@ class CheckoutAddressWidget extends StatelessWidget {
           },
           success: (response) {
             if (response.data!.isNotEmpty) {
-              return ComponentAddress(
-                data: response.data!.first,
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: ComponentCheckoutAddress(
+                  onTap: () {
+                    Navigations.pushNavigation(
+                      context,
+                      const UserAddressPage(),
+                    );
+                  },
+                  data: response.data!.first,
+                ),
               );
             } else {
               return Column(

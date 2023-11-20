@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_address_bloc.dart';
+part of 'address_by_default_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,60 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$UserAddressEvent {
+mixin _$AddressByDefaultEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllUserAddress,
+    required TResult Function(bool isDefault) getUserAddressByDefault,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllUserAddress,
+    TResult? Function(bool isDefault)? getUserAddressByDefault,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllUserAddress,
+    TResult Function(bool isDefault)? getUserAddressByDefault,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_GetUserAddressByDefault value)
+        getUserAddressByDefault,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserAddressEventCopyWith<$Res> {
-  factory $UserAddressEventCopyWith(
-          UserAddressEvent value, $Res Function(UserAddressEvent) then) =
-      _$UserAddressEventCopyWithImpl<$Res, UserAddressEvent>;
+abstract class $AddressByDefaultEventCopyWith<$Res> {
+  factory $AddressByDefaultEventCopyWith(AddressByDefaultEvent value,
+          $Res Function(AddressByDefaultEvent) then) =
+      _$AddressByDefaultEventCopyWithImpl<$Res, AddressByDefaultEvent>;
 }
 
 /// @nodoc
-class _$UserAddressEventCopyWithImpl<$Res, $Val extends UserAddressEvent>
-    implements $UserAddressEventCopyWith<$Res> {
-  _$UserAddressEventCopyWithImpl(this._value, this._then);
+class _$AddressByDefaultEventCopyWithImpl<$Res,
+        $Val extends AddressByDefaultEvent>
+    implements $AddressByDefaultEventCopyWith<$Res> {
+  _$AddressByDefaultEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +85,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$UserAddressEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$AddressByDefaultEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -97,7 +99,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'UserAddressEvent.started()';
+    return 'AddressByDefaultEvent.started()';
   }
 
   @override
@@ -113,7 +115,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllUserAddress,
+    required TResult Function(bool isDefault) getUserAddressByDefault,
   }) {
     return started();
   }
@@ -122,7 +124,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllUserAddress,
+    TResult? Function(bool isDefault)? getUserAddressByDefault,
   }) {
     return started?.call();
   }
@@ -131,7 +133,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllUserAddress,
+    TResult Function(bool isDefault)? getUserAddressByDefault,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +146,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_GetUserAddressByDefault value)
+        getUserAddressByDefault,
   }) {
     return started(this);
   }
@@ -153,7 +156,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
   }) {
     return started?.call(this);
   }
@@ -162,7 +165,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -172,72 +175,103 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements UserAddressEvent {
+abstract class _Started implements AddressByDefaultEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetAllUserAddressImplCopyWith<$Res> {
-  factory _$$GetAllUserAddressImplCopyWith(_$GetAllUserAddressImpl value,
-          $Res Function(_$GetAllUserAddressImpl) then) =
-      __$$GetAllUserAddressImplCopyWithImpl<$Res>;
+abstract class _$$GetUserAddressByDefaultImplCopyWith<$Res> {
+  factory _$$GetUserAddressByDefaultImplCopyWith(
+          _$GetUserAddressByDefaultImpl value,
+          $Res Function(_$GetUserAddressByDefaultImpl) then) =
+      __$$GetUserAddressByDefaultImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isDefault});
 }
 
 /// @nodoc
-class __$$GetAllUserAddressImplCopyWithImpl<$Res>
-    extends _$UserAddressEventCopyWithImpl<$Res, _$GetAllUserAddressImpl>
-    implements _$$GetAllUserAddressImplCopyWith<$Res> {
-  __$$GetAllUserAddressImplCopyWithImpl(_$GetAllUserAddressImpl _value,
-      $Res Function(_$GetAllUserAddressImpl) _then)
+class __$$GetUserAddressByDefaultImplCopyWithImpl<$Res>
+    extends _$AddressByDefaultEventCopyWithImpl<$Res,
+        _$GetUserAddressByDefaultImpl>
+    implements _$$GetUserAddressByDefaultImplCopyWith<$Res> {
+  __$$GetUserAddressByDefaultImplCopyWithImpl(
+      _$GetUserAddressByDefaultImpl _value,
+      $Res Function(_$GetUserAddressByDefaultImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isDefault = null,
+  }) {
+    return _then(_$GetUserAddressByDefaultImpl(
+      null == isDefault
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$GetAllUserAddressImpl implements _GetAllUserAddress {
-  const _$GetAllUserAddressImpl();
+class _$GetUserAddressByDefaultImpl implements _GetUserAddressByDefault {
+  const _$GetUserAddressByDefaultImpl(this.isDefault);
+
+  @override
+  final bool isDefault;
 
   @override
   String toString() {
-    return 'UserAddressEvent.getAllUserAddress()';
+    return 'AddressByDefaultEvent.getUserAddressByDefault(isDefault: $isDefault)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllUserAddressImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserAddressByDefaultImpl &&
+            (identical(other.isDefault, isDefault) ||
+                other.isDefault == isDefault));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, isDefault);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserAddressByDefaultImplCopyWith<_$GetUserAddressByDefaultImpl>
+      get copyWith => __$$GetUserAddressByDefaultImplCopyWithImpl<
+          _$GetUserAddressByDefaultImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllUserAddress,
+    required TResult Function(bool isDefault) getUserAddressByDefault,
   }) {
-    return getAllUserAddress();
+    return getUserAddressByDefault(isDefault);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllUserAddress,
+    TResult? Function(bool isDefault)? getUserAddressByDefault,
   }) {
-    return getAllUserAddress?.call();
+    return getUserAddressByDefault?.call(isDefault);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllUserAddress,
+    TResult Function(bool isDefault)? getUserAddressByDefault,
     required TResult orElse(),
   }) {
-    if (getAllUserAddress != null) {
-      return getAllUserAddress();
+    if (getUserAddressByDefault != null) {
+      return getUserAddressByDefault(isDefault);
     }
     return orElse();
   }
@@ -246,40 +280,47 @@ class _$GetAllUserAddressImpl implements _GetAllUserAddress {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_GetUserAddressByDefault value)
+        getUserAddressByDefault,
   }) {
-    return getAllUserAddress(this);
+    return getUserAddressByDefault(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
   }) {
-    return getAllUserAddress?.call(this);
+    return getUserAddressByDefault?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_GetUserAddressByDefault value)? getUserAddressByDefault,
     required TResult orElse(),
   }) {
-    if (getAllUserAddress != null) {
-      return getAllUserAddress(this);
+    if (getUserAddressByDefault != null) {
+      return getUserAddressByDefault(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAllUserAddress implements UserAddressEvent {
-  const factory _GetAllUserAddress() = _$GetAllUserAddressImpl;
+abstract class _GetUserAddressByDefault implements AddressByDefaultEvent {
+  const factory _GetUserAddressByDefault(final bool isDefault) =
+      _$GetUserAddressByDefaultImpl;
+
+  bool get isDefault;
+  @JsonKey(ignore: true)
+  _$$GetUserAddressByDefaultImplCopyWith<_$GetUserAddressByDefaultImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$UserAddressState {
+mixin _$AddressByDefaultState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -333,16 +374,17 @@ mixin _$UserAddressState {
 }
 
 /// @nodoc
-abstract class $UserAddressStateCopyWith<$Res> {
-  factory $UserAddressStateCopyWith(
-          UserAddressState value, $Res Function(UserAddressState) then) =
-      _$UserAddressStateCopyWithImpl<$Res, UserAddressState>;
+abstract class $AddressByDefaultStateCopyWith<$Res> {
+  factory $AddressByDefaultStateCopyWith(AddressByDefaultState value,
+          $Res Function(AddressByDefaultState) then) =
+      _$AddressByDefaultStateCopyWithImpl<$Res, AddressByDefaultState>;
 }
 
 /// @nodoc
-class _$UserAddressStateCopyWithImpl<$Res, $Val extends UserAddressState>
-    implements $UserAddressStateCopyWith<$Res> {
-  _$UserAddressStateCopyWithImpl(this._value, this._then);
+class _$AddressByDefaultStateCopyWithImpl<$Res,
+        $Val extends AddressByDefaultState>
+    implements $AddressByDefaultStateCopyWith<$Res> {
+  _$AddressByDefaultStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -359,7 +401,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$UserAddressStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AddressByDefaultStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -373,7 +415,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'UserAddressState.initial()';
+    return 'AddressByDefaultState.initial()';
   }
 
   @override
@@ -460,7 +502,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements UserAddressState {
+abstract class _Initial implements AddressByDefaultState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -473,7 +515,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$UserAddressStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$AddressByDefaultStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -487,7 +529,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'UserAddressState.loading()';
+    return 'AddressByDefaultState.loading()';
   }
 
   @override
@@ -574,7 +616,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements UserAddressState {
+abstract class _Loading implements AddressByDefaultState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -589,7 +631,7 @@ abstract class _$$SuccessImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$UserAddressStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$AddressByDefaultStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -619,7 +661,7 @@ class _$SuccessImpl implements _Success {
 
   @override
   String toString() {
-    return 'UserAddressState.success(data: $data)';
+    return 'AddressByDefaultState.success(data: $data)';
   }
 
   @override
@@ -714,7 +756,7 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements UserAddressState {
+abstract class _Success implements AddressByDefaultState {
   const factory _Success(final UserAddressResponseModel data) = _$SuccessImpl;
 
   UserAddressResponseModel get data;
@@ -734,7 +776,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$UserAddressStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$AddressByDefaultStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -764,7 +806,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'UserAddressState.error(error: $error)';
+    return 'AddressByDefaultState.error(error: $error)';
   }
 
   @override
@@ -859,7 +901,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements UserAddressState {
+abstract class _Error implements AddressByDefaultState {
   const factory _Error(final String error) = _$ErrorImpl;
 
   String get error;

@@ -9,17 +9,7 @@ part 'user_address_bloc.freezed.dart';
 
 class UserAddressBloc extends Bloc<UserAddressEvent, UserAddressState> {
   UserAddressBloc() : super(const _Initial()) {
-    on<_GetUserAddressByDefault>((event, emit) async {
-      emit(const _Loading());
-      final response =
-          await UserAddressRemoteDatasource().getUserAddressByDefault(
-        event.isDefault,
-      );
-      response.fold(
-        (l) => emit(_Error(l)),
-        (r) => emit(_Success(r)),
-      );
-    });
+    
 
     on<_GetAllUserAddress>((event, emit) async {
       emit(const _Loading());

@@ -5,6 +5,7 @@ import 'package:ecommerce_final_task/common/components/custom_loading_state.dart
 import 'package:ecommerce_final_task/common/components/custom_row.dart';
 import 'package:ecommerce_final_task/common/components/custom_seperator.dart';
 import 'package:ecommerce_final_task/common/extensions/ext_format_currency.dart';
+import 'package:ecommerce_final_task/presentation/cart/widgets/cart_model.dart';
 import 'package:ecommerce_final_task/presentation/check_out/checkout_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,9 +16,15 @@ import '../../../common/constans/navigation.dart';
 import '../../../common/constans/variables.dart';
 import '../bloc/list_cart/cart_list_bloc.dart';
 
-class CartCheckoutWidget extends StatelessWidget {
+class CartCheckoutWidget extends StatefulWidget {
   const CartCheckoutWidget({super.key});
 
+  @override
+  State<CartCheckoutWidget> createState() => _CartCheckoutWidgetState();
+}
+
+class _CartCheckoutWidgetState extends State<CartCheckoutWidget> {
+  List<CartModel>? listCart;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -37,6 +44,7 @@ class CartCheckoutWidget extends StatelessWidget {
               return const CustomLoadingState();
             },
             success: (response) {
+              listCart = response;
               double totalPrice = 0;
               for (var element in response) {
                 totalPrice += int.parse(element.product.attributes!.price!) *
@@ -75,7 +83,6 @@ class CartCheckoutWidget extends StatelessWidget {
                         Navigations.pushNavigation(
                           context,
                           CheckoutPage(
-                            listCart: response,
                             totalPrice: totalPrice,
                           ),
                         );

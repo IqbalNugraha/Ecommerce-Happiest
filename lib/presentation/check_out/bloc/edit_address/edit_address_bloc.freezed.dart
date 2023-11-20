@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_address_bloc.dart';
+part of 'edit_address_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,59 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$UserAddressEvent {
+mixin _$EditAddressEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllUserAddress,
+    required TResult Function(ModelEditUserAddress model, int id)
+        editUserAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllUserAddress,
+    TResult? Function(ModelEditUserAddress model, int id)? editUserAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllUserAddress,
+    TResult Function(ModelEditUserAddress model, int id)? editUserAddress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_EditUserAddress value) editUserAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_EditUserAddress value)? editUserAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_EditUserAddress value)? editUserAddress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserAddressEventCopyWith<$Res> {
-  factory $UserAddressEventCopyWith(
-          UserAddressEvent value, $Res Function(UserAddressEvent) then) =
-      _$UserAddressEventCopyWithImpl<$Res, UserAddressEvent>;
+abstract class $EditAddressEventCopyWith<$Res> {
+  factory $EditAddressEventCopyWith(
+          EditAddressEvent value, $Res Function(EditAddressEvent) then) =
+      _$EditAddressEventCopyWithImpl<$Res, EditAddressEvent>;
 }
 
 /// @nodoc
-class _$UserAddressEventCopyWithImpl<$Res, $Val extends UserAddressEvent>
-    implements $UserAddressEventCopyWith<$Res> {
-  _$UserAddressEventCopyWithImpl(this._value, this._then);
+class _$EditAddressEventCopyWithImpl<$Res, $Val extends EditAddressEvent>
+    implements $EditAddressEventCopyWith<$Res> {
+  _$EditAddressEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +84,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$UserAddressEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$EditAddressEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -97,7 +98,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'UserAddressEvent.started()';
+    return 'EditAddressEvent.started()';
   }
 
   @override
@@ -113,7 +114,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllUserAddress,
+    required TResult Function(ModelEditUserAddress model, int id)
+        editUserAddress,
   }) {
     return started();
   }
@@ -122,7 +124,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllUserAddress,
+    TResult? Function(ModelEditUserAddress model, int id)? editUserAddress,
   }) {
     return started?.call();
   }
@@ -131,7 +133,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllUserAddress,
+    TResult Function(ModelEditUserAddress model, int id)? editUserAddress,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +146,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_EditUserAddress value) editUserAddress,
   }) {
     return started(this);
   }
@@ -153,7 +155,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_EditUserAddress value)? editUserAddress,
   }) {
     return started?.call(this);
   }
@@ -162,7 +164,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_EditUserAddress value)? editUserAddress,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -172,72 +174,108 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements UserAddressEvent {
+abstract class _Started implements EditAddressEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetAllUserAddressImplCopyWith<$Res> {
-  factory _$$GetAllUserAddressImplCopyWith(_$GetAllUserAddressImpl value,
-          $Res Function(_$GetAllUserAddressImpl) then) =
-      __$$GetAllUserAddressImplCopyWithImpl<$Res>;
+abstract class _$$EditUserAddressImplCopyWith<$Res> {
+  factory _$$EditUserAddressImplCopyWith(_$EditUserAddressImpl value,
+          $Res Function(_$EditUserAddressImpl) then) =
+      __$$EditUserAddressImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ModelEditUserAddress model, int id});
 }
 
 /// @nodoc
-class __$$GetAllUserAddressImplCopyWithImpl<$Res>
-    extends _$UserAddressEventCopyWithImpl<$Res, _$GetAllUserAddressImpl>
-    implements _$$GetAllUserAddressImplCopyWith<$Res> {
-  __$$GetAllUserAddressImplCopyWithImpl(_$GetAllUserAddressImpl _value,
-      $Res Function(_$GetAllUserAddressImpl) _then)
+class __$$EditUserAddressImplCopyWithImpl<$Res>
+    extends _$EditAddressEventCopyWithImpl<$Res, _$EditUserAddressImpl>
+    implements _$$EditUserAddressImplCopyWith<$Res> {
+  __$$EditUserAddressImplCopyWithImpl(
+      _$EditUserAddressImpl _value, $Res Function(_$EditUserAddressImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? model = null,
+    Object? id = null,
+  }) {
+    return _then(_$EditUserAddressImpl(
+      null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as ModelEditUserAddress,
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$GetAllUserAddressImpl implements _GetAllUserAddress {
-  const _$GetAllUserAddressImpl();
+class _$EditUserAddressImpl implements _EditUserAddress {
+  const _$EditUserAddressImpl(this.model, this.id);
+
+  @override
+  final ModelEditUserAddress model;
+  @override
+  final int id;
 
   @override
   String toString() {
-    return 'UserAddressEvent.getAllUserAddress()';
+    return 'EditAddressEvent.editUserAddress(model: $model, id: $id)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllUserAddressImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$EditUserAddressImpl &&
+            (identical(other.model, model) || other.model == model) &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, model, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditUserAddressImplCopyWith<_$EditUserAddressImpl> get copyWith =>
+      __$$EditUserAddressImplCopyWithImpl<_$EditUserAddressImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllUserAddress,
+    required TResult Function(ModelEditUserAddress model, int id)
+        editUserAddress,
   }) {
-    return getAllUserAddress();
+    return editUserAddress(model, id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllUserAddress,
+    TResult? Function(ModelEditUserAddress model, int id)? editUserAddress,
   }) {
-    return getAllUserAddress?.call();
+    return editUserAddress?.call(model, id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllUserAddress,
+    TResult Function(ModelEditUserAddress model, int id)? editUserAddress,
     required TResult orElse(),
   }) {
-    if (getAllUserAddress != null) {
-      return getAllUserAddress();
+    if (editUserAddress != null) {
+      return editUserAddress(model, id);
     }
     return orElse();
   }
@@ -246,45 +284,52 @@ class _$GetAllUserAddressImpl implements _GetAllUserAddress {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllUserAddress value) getAllUserAddress,
+    required TResult Function(_EditUserAddress value) editUserAddress,
   }) {
-    return getAllUserAddress(this);
+    return editUserAddress(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult? Function(_EditUserAddress value)? editUserAddress,
   }) {
-    return getAllUserAddress?.call(this);
+    return editUserAddress?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllUserAddress value)? getAllUserAddress,
+    TResult Function(_EditUserAddress value)? editUserAddress,
     required TResult orElse(),
   }) {
-    if (getAllUserAddress != null) {
-      return getAllUserAddress(this);
+    if (editUserAddress != null) {
+      return editUserAddress(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAllUserAddress implements UserAddressEvent {
-  const factory _GetAllUserAddress() = _$GetAllUserAddressImpl;
+abstract class _EditUserAddress implements EditAddressEvent {
+  const factory _EditUserAddress(
+      final ModelEditUserAddress model, final int id) = _$EditUserAddressImpl;
+
+  ModelEditUserAddress get model;
+  int get id;
+  @JsonKey(ignore: true)
+  _$$EditUserAddressImplCopyWith<_$EditUserAddressImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$UserAddressState {
+mixin _$EditAddressState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserAddressResponseModel data) success,
+    required TResult Function(AddAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -292,7 +337,7 @@ mixin _$UserAddressState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserAddressResponseModel data)? success,
+    TResult? Function(AddAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -300,7 +345,7 @@ mixin _$UserAddressState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserAddressResponseModel data)? success,
+    TResult Function(AddAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -333,16 +378,16 @@ mixin _$UserAddressState {
 }
 
 /// @nodoc
-abstract class $UserAddressStateCopyWith<$Res> {
-  factory $UserAddressStateCopyWith(
-          UserAddressState value, $Res Function(UserAddressState) then) =
-      _$UserAddressStateCopyWithImpl<$Res, UserAddressState>;
+abstract class $EditAddressStateCopyWith<$Res> {
+  factory $EditAddressStateCopyWith(
+          EditAddressState value, $Res Function(EditAddressState) then) =
+      _$EditAddressStateCopyWithImpl<$Res, EditAddressState>;
 }
 
 /// @nodoc
-class _$UserAddressStateCopyWithImpl<$Res, $Val extends UserAddressState>
-    implements $UserAddressStateCopyWith<$Res> {
-  _$UserAddressStateCopyWithImpl(this._value, this._then);
+class _$EditAddressStateCopyWithImpl<$Res, $Val extends EditAddressState>
+    implements $EditAddressStateCopyWith<$Res> {
+  _$EditAddressStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -359,7 +404,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$UserAddressStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$EditAddressStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -373,7 +418,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'UserAddressState.initial()';
+    return 'EditAddressState.initial()';
   }
 
   @override
@@ -390,7 +435,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserAddressResponseModel data) success,
+    required TResult Function(AddAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -401,7 +446,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserAddressResponseModel data)? success,
+    TResult? Function(AddAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -412,7 +457,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserAddressResponseModel data)? success,
+    TResult Function(AddAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -460,7 +505,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements UserAddressState {
+abstract class _Initial implements EditAddressState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -473,7 +518,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$UserAddressStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$EditAddressStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -487,7 +532,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'UserAddressState.loading()';
+    return 'EditAddressState.loading()';
   }
 
   @override
@@ -504,7 +549,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserAddressResponseModel data) success,
+    required TResult Function(AddAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -515,7 +560,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserAddressResponseModel data)? success,
+    TResult? Function(AddAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -526,7 +571,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserAddressResponseModel data)? success,
+    TResult Function(AddAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -574,7 +619,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements UserAddressState {
+abstract class _Loading implements EditAddressState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -584,12 +629,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserAddressResponseModel data});
+  $Res call({AddAddressResponseModel data});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$UserAddressStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$EditAddressStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -604,7 +649,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as UserAddressResponseModel,
+              as AddAddressResponseModel,
     ));
   }
 }
@@ -615,11 +660,11 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl(this.data);
 
   @override
-  final UserAddressResponseModel data;
+  final AddAddressResponseModel data;
 
   @override
   String toString() {
-    return 'UserAddressState.success(data: $data)';
+    return 'EditAddressState.success(data: $data)';
   }
 
   @override
@@ -644,7 +689,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserAddressResponseModel data) success,
+    required TResult Function(AddAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return success(data);
@@ -655,7 +700,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserAddressResponseModel data)? success,
+    TResult? Function(AddAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return success?.call(data);
@@ -666,7 +711,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserAddressResponseModel data)? success,
+    TResult Function(AddAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -714,10 +759,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements UserAddressState {
-  const factory _Success(final UserAddressResponseModel data) = _$SuccessImpl;
+abstract class _Success implements EditAddressState {
+  const factory _Success(final AddAddressResponseModel data) = _$SuccessImpl;
 
-  UserAddressResponseModel get data;
+  AddAddressResponseModel get data;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -734,7 +779,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$UserAddressStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$EditAddressStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -764,7 +809,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'UserAddressState.error(error: $error)';
+    return 'EditAddressState.error(error: $error)';
   }
 
   @override
@@ -789,7 +834,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserAddressResponseModel data) success,
+    required TResult Function(AddAddressResponseModel data) success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -800,7 +845,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserAddressResponseModel data)? success,
+    TResult? Function(AddAddressResponseModel data)? success,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -811,7 +856,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserAddressResponseModel data)? success,
+    TResult Function(AddAddressResponseModel data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -859,7 +904,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements UserAddressState {
+abstract class _Error implements EditAddressState {
   const factory _Error(final String error) = _$ErrorImpl;
 
   String get error;

@@ -92,6 +92,8 @@ class Variables {
   static const String btnSeeAll = "See All";
   static const String btnAddAddress = "Add Address";
   static const String btnSave = "Save";
+  static const String btnEdit = "Edit";
+  static const String btnDelete = "Delete";
 
   //message
   static const String msgCantEmpty = "Field can't empty";
@@ -102,6 +104,7 @@ class Variables {
   static const String msgSuccessCart = "Success add to Cart";
   static const String msgUseVoucher = "Use some Voucher?";
   static const String msgEmptyAddress = "Please input your home address";
+  static const String msgChooseAddress = "Choose your default address";
   static const String msgHttp408 = "Request Time Out";
   static const String msgHttpService = "Internal Services Error";
 

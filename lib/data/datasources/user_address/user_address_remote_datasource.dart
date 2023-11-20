@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_final_task/common/constans/api_services.dart';
 import 'package:ecommerce_final_task/data/datasources/local_remote_datasources.dart';
+import 'package:ecommerce_final_task/data/models/requests/user_address/edit_user_address_request_model.dart';
 import 'package:ecommerce_final_task/data/models/requests/user_address/user_address_request_model.dart';
 import 'package:ecommerce_final_task/data/models/responses/user_address/add_address_response_model.dart';
 import 'package:ecommerce_final_task/data/models/responses/user_address/user_address_response_model.dart';
@@ -16,7 +17,7 @@ class UserAddressRemoteDatasource {
     final username = await LocalDatasource().getUsername();
     final response = await http.get(
       Uri.parse(
-          "${ApiServices.baseUrl + ApiServices.getUserAddress}&filters[user][username][$eq]=$username"),
+          "${ApiServices.baseUrl + ApiServices.getUserAddress}&filters[user][username][\$eq]=$username"),
       headers: {
         "Authorization": "Bearer $token",
         "Content-Type": "application/json",
@@ -52,7 +53,7 @@ class UserAddressRemoteDatasource {
     final username = await LocalDatasource().getUsername();
     final response = await http.get(
       Uri.parse(
-          "${ApiServices.baseUrl + ApiServices.getUserAddress}%filters[is_default][$eq]=$isDefault&filters[user][username][$eq]=$username"),
+          "${ApiServices.baseUrl + ApiServices.getUserAddress}&filters[is_default][\$eq]=$isDefault&filters[user][username][\$eq]=$username"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': 'Bearer $token',
@@ -101,7 +102,48 @@ class UserAddressRemoteDatasource {
       },
     );
 
-    print(response.statusCode);
+    if (response.statusCode == 200) {
+      return Right(AddAddressResponseModel.fromJson(response.body));
+    } else if (response.statusCode == 201) {
+      return Right(AddAddressResponseModel.fromJson(response.body));
+    } else if (response.statusCode == 400) {
+      return Right(AddAddressResponseModel.fromJson(response.body));
+    } else if (response.statusCode == 401) {
+      return Right(AddAddressResponseModel.fromJson(response.body));
+    } else if (response.statusCode == 404) {
+      return Right(AddAddressResponseModel.fromJson(response.body));
+    } else if (response.statusCode == 408) {
+      return const Left(Variables.msgHttp408);
+    } else {
+      return const Left(Variables.msgHttpService);
+    }
+  }
+
+  Future<Either<String, AddAddressResponseModel>> editUserAddress(
+    int id,
+    ModelEditUserAddress model,
+  ) async {
+    final token = await LocalDatasource().getToken();
+    final response = await http
+        .put(
+      Uri.parse("${ApiServices.baseUrl + ApiServices.addUserAddress}/$id"),
+      headers: {
+        "Authorization": "Bearer $token",
+        "Content-Type": "application/json",
+      },
+      body: EditUserAddressRequestModel(
+        data: model,
+      ).toJson(),
+    )
+        .timeout(
+      const Duration(seconds: 10),
+      onTimeout: () {
+        return http.Response(Variables.msgHttp408, 408);
+      },
+    );
+
+    print(response.request);
+    print(response.body);
 
     if (response.statusCode == 200) {
       return Right(AddAddressResponseModel.fromJson(response.body));
