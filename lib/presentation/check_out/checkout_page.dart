@@ -3,7 +3,7 @@ import 'package:ecommerce_final_task/common/components/custom_seperator.dart';
 import 'package:ecommerce_final_task/presentation/check_out/bloc/address_by_default/address_by_default_bloc.dart';
 import 'package:ecommerce_final_task/presentation/check_out/widgets/checkout_address_widget.dart';
 import 'package:ecommerce_final_task/presentation/check_out/widgets/checkout_items_widget.dart';
-import 'package:ecommerce_final_task/presentation/check_out/widgets/checkout_voucher_widget.dart';
+import 'package:ecommerce_final_task/presentation/check_out/widgets/checkout_payment_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,6 +23,8 @@ class CheckoutPage extends StatefulWidget {
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
+  int idDestination = 0;
+  
   @override
   void initState() {
     print(widget.totalPrice);
@@ -48,19 +50,17 @@ class _CheckoutPageState extends State<CheckoutPage> {
             const SizedBox(height: 8),
             Expanded(
               child: ListView(
+                padding: const EdgeInsets.symmetric(vertical: 16),
                 children: [
-                  const SizedBox(height: 16),
                   const CheckoutAddressWidget(),
                   const SizedBox(height: 16),
                   const CustomSeperator(
                     colorSeperator: MyColors.greyColor,
                   ),
                   const SizedBox(height: 16),
-                  const Flexible(
-                    child: CheckoutItemsWidget(),
-                  ),
+                  const CheckoutItemsWidget(),
                   const SizedBox(height: 16),
-                  CheckoutVoucherWidget(
+                  CheckoutPaymentWidget(
                     totalPrice: widget.totalPrice,
                   ),
                 ],

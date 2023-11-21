@@ -68,6 +68,7 @@ class _CartCheckoutWidgetState extends State<CartCheckoutWidget> {
                   CustomRow(
                     title: Variables.total,
                     value: totalPrice.doubleCurrencyFormatRp,
+                    textAlign: TextAlign.end,
                   ),
                   const SizedBox(height: 16),
                   CustomButton(

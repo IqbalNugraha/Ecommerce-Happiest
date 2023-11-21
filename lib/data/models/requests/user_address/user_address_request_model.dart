@@ -56,6 +56,7 @@ class Data {
   final String city;
   final String subdistrict;
   final String postalCode;
+  final String idSubdistrict;
   final bool isDefault;
   final List<int> user;
   Data({
@@ -66,6 +67,7 @@ class Data {
     required this.city,
     required this.subdistrict,
     required this.postalCode,
+    required this.idSubdistrict,
     required this.isDefault,
     required this.user,
   });
@@ -78,6 +80,7 @@ class Data {
     String? city,
     String? subdistrict,
     String? postalCode,
+    String? idSubdistrict,
     bool? isDefault,
     List<int>? user,
   }) {
@@ -89,6 +92,7 @@ class Data {
       city: city ?? this.city,
       subdistrict: subdistrict ?? this.subdistrict,
       postalCode: postalCode ?? this.postalCode,
+      idSubdistrict: idSubdistrict ?? this.idSubdistrict,
       isDefault: isDefault ?? this.isDefault,
       user: user ?? this.user,
     );
@@ -103,6 +107,7 @@ class Data {
       'city': city,
       'subdistrict': subdistrict,
       'postal_code': postalCode,
+      'id_subdistrict': idSubdistrict,
       'is_default': isDefault,
       'user': user,
     };
@@ -117,6 +122,7 @@ class Data {
       city: map['city'] as String,
       subdistrict: map['subdistrict'] as String,
       postalCode: map['postal_code'] as String,
+      idSubdistrict: map['is_default'] as String,
       isDefault: map['is_default'] as bool,
       user: List<int>.from(
         (map['user'] as List<int>),

@@ -35,7 +35,7 @@ class _AddAddressFormWidgetState extends State<AddAddressFormWidget> {
   Province? _selectedProvince;
   City? _selectedCity;
   SubDistrict? _selectedSubdistrict;
-  String? _province, _city, _subdistrict;
+  String? _province, _city, _subdistrict, _idSubdistrict;
 
   @override
   void initState() {
@@ -192,6 +192,7 @@ class _AddAddressFormWidgetState extends State<AddAddressFormWidget> {
                                 _selectedSubdistrict = value;
                                 _subdistrict =
                                     _selectedSubdistrict!.subdistrictName;
+                                    _idSubdistrict = _selectedSubdistrict!.subdistrictId;
                               });
                             },
                           );
@@ -252,6 +253,7 @@ class _AddAddressFormWidgetState extends State<AddAddressFormWidget> {
                                   city: _city!,
                                   subdistrict: _subdistrict!,
                                   postalCode: postalCodeController.text,
+                                  idSubdistrict: _idSubdistrict!,
                                   isDefault: false,
                                   user: [id],
                                 ),

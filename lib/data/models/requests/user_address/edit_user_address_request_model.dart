@@ -42,6 +42,7 @@ class ModelEditUserAddress {
   final String city;
   final String subdistrict;
   final String postalCode;
+  final String idSubdistrict;
   final bool isDefault;
   ModelEditUserAddress({
     required this.id,
@@ -52,6 +53,7 @@ class ModelEditUserAddress {
     required this.city,
     required this.subdistrict,
     required this.postalCode,
+    required this.idSubdistrict,
     required this.isDefault,
   });
 
@@ -64,6 +66,7 @@ class ModelEditUserAddress {
     String? city,
     String? subdistrict,
     String? postalCode,
+    String? idSubdistrict,
     bool? isDefault,
   }) {
     return ModelEditUserAddress(
@@ -75,6 +78,7 @@ class ModelEditUserAddress {
       city: city ?? this.city,
       subdistrict: subdistrict ?? this.subdistrict,
       postalCode: postalCode ?? this.postalCode,
+      idSubdistrict: idSubdistrict ?? this.idSubdistrict,
       isDefault: isDefault ?? this.isDefault,
     );
   }
@@ -89,6 +93,7 @@ class ModelEditUserAddress {
       'city': city,
       'subdistrict': subdistrict,
       'postal_code': postalCode,
+      'id_subdistrict': idSubdistrict,
       'is_default': isDefault,
     };
   }
@@ -103,6 +108,7 @@ class ModelEditUserAddress {
       city: map['city'] as String,
       subdistrict: map['subdistrict'] as String,
       postalCode: map['postal_code'] as String,
+      idSubdistrict: map['is_default'] as String,
       isDefault: map['is_default'] as bool,
     );
   }

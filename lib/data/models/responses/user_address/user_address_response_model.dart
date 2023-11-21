@@ -63,6 +63,7 @@ class UserAddressAtrributes {
   final String? city;
   final String? subdistrict;
   final String? postalCode;
+  final String? idSubdistrict;
   final bool? isDefault;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -76,6 +77,7 @@ class UserAddressAtrributes {
     this.city,
     this.subdistrict,
     this.postalCode,
+    this.idSubdistrict,
     this.isDefault,
     this.createdAt,
     this.updatedAt,
@@ -95,6 +97,7 @@ class UserAddressAtrributes {
         city: json["city"],
         subdistrict: json["subdistrict"],
         postalCode: json["postal_code"],
+        idSubdistrict: json["id_subdistrict"],
         isDefault: json["is_default"],
         createdAt: json["createdAt"] == null
             ? null
@@ -116,6 +119,7 @@ class UserAddressAtrributes {
         "subdistrict": subdistrict,
         "postal_code": postalCode,
         "is_default": isDefault,
+        "id_subdistrict": idSubdistrict,
         "createdAt": createdAt?.toIso8601String(),
         "updatedAt": updatedAt?.toIso8601String(),
         "publishedAt": publishedAt?.toIso8601String(),

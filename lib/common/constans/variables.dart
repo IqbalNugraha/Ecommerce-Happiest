@@ -71,6 +71,8 @@ class Variables {
 
   //checkout
   static const String checkoutAppbar = "Checkout Page";
+  static const String courierDropdown = "Choose Courier";
+  static const String shippingCost = "Shipping Cost";
 
   //user-address
   static const String checkoutAddress = "Checkout Address";

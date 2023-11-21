@@ -5,10 +5,12 @@ import 'custom_font.dart';
 
 class CustomRow extends StatelessWidget {
   final String title, value;
+  final TextAlign textAlign;
   const CustomRow({
     super.key,
     required this.title,
     required this.value,
+    this.textAlign = TextAlign.start,
   });
 
   @override
@@ -42,7 +44,7 @@ class CustomRow extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.w600,
               fontColor: MyColors.blackColor,
-              alignment: TextAlign.start,
+              alignment: textAlign,
             ),
           ),
         ],

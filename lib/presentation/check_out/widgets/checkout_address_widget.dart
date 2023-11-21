@@ -12,7 +12,9 @@ import '../../../common/constans/navigation.dart';
 import '../../../common/constans/variables.dart';
 
 class CheckoutAddressWidget extends StatelessWidget {
-  const CheckoutAddressWidget({super.key});
+  const CheckoutAddressWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

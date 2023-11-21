@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import '../../../common/constans/api_services.dart';
 import '../../../common/constans/variables.dart';
 import '../../models/responses/user_address/city_response_model.dart';
+import '../../models/responses/user_address/cost_response_model.dart';
 import '../../models/responses/user_address/province_response_model.dart';
 import '../../models/responses/user_address/subdistrict_response_model.dart';
 
@@ -98,6 +99,35 @@ class RajaOngkirRemoteDatasource {
       return const Left(Variables.msgHttp408);
     } else {
       return const Left(Variables.msgHttpService);
+    }
+  }
+
+  Future<Either<String, CostResponseModel>> getCost(
+    String origin,
+    String destination,
+    String courier,
+  ) async {
+    final url = Uri.parse('${ApiServices.baseUrlRajaOngkir}/cost');
+    final response = await http.post(
+      url,
+      headers: {
+        'key': ApiServices.rajaOngkirKey,
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      body: {
+        'origin': origin,
+        'originType': 'subdistrict',
+        'destination': destination,
+        'destinationType': 'subdistrict',
+        'weight': '500',
+        'courier': courier,
+      },
+    );
+
+    if (response.statusCode == 200) {
+      return right(CostResponseModel.fromJson(response.body));
+    } else {
+      return left('Error');
     }
   }
 }

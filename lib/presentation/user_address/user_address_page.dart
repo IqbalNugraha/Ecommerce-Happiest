@@ -144,6 +144,8 @@ class _UserAddressPageState extends State<UserAddressPage> {
                                   dataUserAddress!.attributes!.subdistrict!,
                               postalCode:
                                   dataUserAddress!.attributes!.postalCode!,
+                              idSubdistrict:
+                                  dataUserAddress!.attributes!.idSubdistrict!,
                               isDefault: true,
                             );
                             context.read<EditAddressBloc>().add(
