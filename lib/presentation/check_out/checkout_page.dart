@@ -7,9 +7,12 @@ import 'package:ecommerce_final_task/presentation/check_out/widgets/checkout_pay
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../common/components/custom_loading_state.dart';
 import '../../common/constans/colors.dart';
 import '../../common/constans/navigation.dart';
 import '../../common/constans/variables.dart';
+import '../cart/bloc/list_cart/cart_list_bloc.dart';
+import '../cart/widgets/cart_model.dart';
 
 class CheckoutPage extends StatefulWidget {
   final double totalPrice;
@@ -24,7 +27,8 @@ class CheckoutPage extends StatefulWidget {
 
 class _CheckoutPageState extends State<CheckoutPage> {
   int idDestination = 0;
-  
+  List<CartModel> listCart = [];
+
   @override
   void initState() {
     print(widget.totalPrice);
@@ -49,21 +53,35 @@ class _CheckoutPageState extends State<CheckoutPage> {
             ),
             const SizedBox(height: 8),
             Expanded(
-              child: ListView(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                children: [
-                  const CheckoutAddressWidget(),
-                  const SizedBox(height: 16),
-                  const CustomSeperator(
-                    colorSeperator: MyColors.greyColor,
-                  ),
-                  const SizedBox(height: 16),
-                  const CheckoutItemsWidget(),
-                  const SizedBox(height: 16),
-                  CheckoutPaymentWidget(
-                    totalPrice: widget.totalPrice,
-                  ),
-                ],
+              child: BlocBuilder<CartListBloc, CartListState>(
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    orElse: () {
+                      return const CustomLoadingState();
+                    },
+                    success: (carts) {
+                      return ListView(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        children: [
+                          const CheckoutAddressWidget(),
+                          const SizedBox(height: 16),
+                          const CustomSeperator(
+                            colorSeperator: MyColors.greyColor,
+                          ),
+                          const SizedBox(height: 16),
+                          CheckoutItemsWidget(
+                            listCart: carts,
+                          ),
+                          const SizedBox(height: 16),
+                          CheckoutPaymentWidget(
+                            totalPrice: widget.totalPrice,
+                            listCart: carts,
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
               ),
             ),
           ],

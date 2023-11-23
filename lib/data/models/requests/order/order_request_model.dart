@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 class OrderRequestModel {
-  final Data data;
+  final OrderRequest data;
   OrderRequestModel({
     required this.data,
   });
 
   OrderRequestModel copyWith({
-    Data? data,
+    OrderRequest? data,
   }) {
     return OrderRequestModel(
       data: data ?? this.data,
@@ -22,7 +22,7 @@ class OrderRequestModel {
 
   factory OrderRequestModel.fromMap(Map<String, dynamic> map) {
     return OrderRequestModel(
-      data: Data.fromMap(map['data'] as Map<String, dynamic>),
+      data: OrderRequest.fromMap(map['data'] as Map<String, dynamic>),
     );
   }
 
@@ -45,14 +45,14 @@ class OrderRequestModel {
   int get hashCode => data.hashCode;
 }
 
-class Data {
+class OrderRequest {
   final List<ItemProducts> items;
   final int totalPrice;
   final String deliveryAddress;
   final String courierName;
   final int courierPrice;
   final String status;
-  Data({
+  OrderRequest({
     required this.items,
     required this.totalPrice,
     required this.deliveryAddress,
@@ -61,7 +61,7 @@ class Data {
     required this.status,
   });
 
-  Data copyWith({
+  OrderRequest copyWith({
     List<ItemProducts>? items,
     int? totalPrice,
     String? deliveryAddress,
@@ -69,7 +69,7 @@ class Data {
     int? courierPrice,
     String? status,
   }) {
-    return Data(
+    return OrderRequest(
       items: items ?? this.items,
       totalPrice: totalPrice ?? this.totalPrice,
       deliveryAddress: deliveryAddress ?? this.deliveryAddress,
@@ -90,8 +90,8 @@ class Data {
     };
   }
 
-  factory Data.fromMap(Map<String, dynamic> map) {
-    return Data(
+  factory OrderRequest.fromMap(Map<String, dynamic> map) {
+    return OrderRequest(
       items: List<ItemProducts>.from(
         (map['items'] as List<int>).map<ItemProducts>(
           (x) => ItemProducts.fromMap(x as Map<String, dynamic>),
@@ -107,8 +107,8 @@ class Data {
 
   String toJson() => json.encode(toMap());
 
-  factory Data.fromJson(String source) =>
-      Data.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory OrderRequest.fromJson(String source) =>
+      OrderRequest.fromMap(json.decode(source) as Map<String, dynamic>);
 }
 
 class ItemProducts {

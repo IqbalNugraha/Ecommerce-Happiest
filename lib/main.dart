@@ -3,6 +3,7 @@ import 'package:ecommerce_final_task/presentation/auth/bloc/login/login_bloc.dar
 import 'package:ecommerce_final_task/presentation/check_out/bloc/add_address/add_address_bloc.dart';
 import 'package:ecommerce_final_task/presentation/check_out/bloc/address_by_default/address_by_default_bloc.dart';
 import 'package:ecommerce_final_task/presentation/check_out/bloc/edit_address/edit_address_bloc.dart';
+import 'package:ecommerce_final_task/presentation/check_out/bloc/order/order_bloc.dart';
 import 'package:ecommerce_final_task/presentation/check_out/bloc/shipping_cost/shipping_cost_bloc.dart';
 import 'package:ecommerce_final_task/presentation/check_out/bloc/user_address/user_address_bloc.dart';
 import 'package:ecommerce_final_task/presentation/home/bloc/product/product_bloc.dart';
@@ -88,6 +89,11 @@ class MainApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => EditAddressBloc(),
+        ),
+
+        //order
+        BlocProvider(
+          create: (context) => OrderBloc(),
         ),
 
         //util
