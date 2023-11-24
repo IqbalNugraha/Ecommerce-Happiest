@@ -8,6 +8,7 @@ import 'package:ecommerce_final_task/presentation/check_out/bloc/shipping_cost/s
 import 'package:ecommerce_final_task/presentation/check_out/bloc/user_address/user_address_bloc.dart';
 import 'package:ecommerce_final_task/presentation/home/bloc/product/product_bloc.dart';
 import 'package:ecommerce_final_task/presentation/home/bloc/promotion/promotion_bloc.dart';
+import 'package:ecommerce_final_task/presentation/payment/bloc/order_detail/order_detail_bloc.dart';
 import 'package:ecommerce_final_task/presentation/splash_page.dart';
 import 'package:ecommerce_final_task/presentation/user_address/bloc/city/city_bloc.dart';
 import 'package:ecommerce_final_task/presentation/user_address/bloc/province/province_bloc.dart';
@@ -94,6 +95,9 @@ class MainApp extends StatelessWidget {
         //order
         BlocProvider(
           create: (context) => OrderBloc(),
+        ),
+        BlocProvider(
+          create: (context) => OrderDetailBloc(),
         ),
 
         //util

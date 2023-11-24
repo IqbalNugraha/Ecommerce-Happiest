@@ -279,12 +279,9 @@ class TentacledAttributes {
   final int? height;
 
   final String? hash;
-  final Ext? ext;
-  final Mime? mime;
   final double? size;
   final String? url;
   final dynamic previewUrl;
-  final Provider? provider;
   final dynamic providerMetadata;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -296,12 +293,9 @@ class TentacledAttributes {
     this.width,
     this.height,
     this.hash,
-    this.ext,
-    this.mime,
     this.size,
     this.url,
     this.previewUrl,
-    this.provider,
     this.providerMetadata,
     this.createdAt,
     this.updatedAt,
@@ -320,12 +314,9 @@ class TentacledAttributes {
         width: json["width"],
         height: json["height"],
         hash: json["hash"],
-        ext: extValues.map[json["ext"]]!,
-        mime: mimeValues.map[json["mime"]]!,
         size: json["size"]?.toDouble(),
         url: json["url"],
         previewUrl: json["previewUrl"],
-        provider: providerValues.map[json["provider"]]!,
         providerMetadata: json["provider_metadata"],
         createdAt: json["createdAt"] == null
             ? null
@@ -342,29 +333,16 @@ class TentacledAttributes {
         "width": width,
         "height": height,
         "hash": hash,
-        "ext": extValues.reverse[ext],
-        "mime": mimeValues.reverse[mime],
         "size": size,
         "url": url,
         "previewUrl": previewUrl,
-        "provider": providerValues.reverse[provider],
         "provider_metadata": providerMetadata,
         "createdAt": createdAt?.toIso8601String(),
         "updatedAt": updatedAt?.toIso8601String(),
       };
 }
 
-enum Ext { JPG }
 
-final extValues = EnumValues({".jpg": Ext.JPG});
-
-enum Mime { IMAGE_JPEG }
-
-final mimeValues = EnumValues({"image/jpeg": Mime.IMAGE_JPEG});
-
-enum Provider { LOCAL }
-
-final providerValues = EnumValues({"local": Provider.LOCAL});
 
 class Meta {
   final Pagination? pagination;

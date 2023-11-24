@@ -1,4 +1,5 @@
 import 'package:ecommerce_final_task/data/datasources/local_remote_datasources.dart';
+import 'package:ecommerce_final_task/presentation/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
 import '../common/constans/colors.dart';
@@ -50,7 +51,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
           const HomePage(),
           const Center(child: Text(Variables.search)),
           const Center(child: Text(Variables.favorite)),
-          const Center(child: Text(Variables.profile)),
+          const ProfilePage(),
         ];
 
         _items = const [

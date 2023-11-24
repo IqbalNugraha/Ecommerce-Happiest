@@ -96,6 +96,10 @@ class Variables {
   static const String btnSave = "Save";
   static const String btnEdit = "Edit";
   static const String btnDelete = "Delete";
+  static const String btnProfile = "Profile";
+  static const String btnOrder = "Order";
+  static const String btnAddress = "Address";
+  static const String btnExit = "Exit";
 
   //message
   static const String msgCantEmpty = "Field can't empty";
@@ -109,6 +113,10 @@ class Variables {
   static const String msgChooseAddress = "Choose your default address";
   static const String msgHttp408 = "Request Time Out";
   static const String msgHttpService = "Internal Services Error";
+  static const String msgFailedPayment = "Payment Failed";
+  static const String msgSuccessPayment = "Payment Success";
+  static const String msgDescSuccessPayment =
+      "Congrats your Payment is Success";
 
   //hardcode
   static const String emptyReview = "Nothing Review";
