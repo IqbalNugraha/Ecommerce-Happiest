@@ -86,6 +86,9 @@ class Variables {
   static const String receiverSubdistrict = "Receiver Subdistrict";
   static const String receiverPostalCode = "Receiver Postal Code";
 
+  //order
+  static const String myOrder = "My Order";
+
   //button
   static const String btnOkay = "Okay";
   static const String btnLogin = "Login";
@@ -110,6 +113,7 @@ class Variables {
   static const String msgSuccessCart = "Success add to Cart";
   static const String msgUseVoucher = "Use some Voucher?";
   static const String msgEmptyAddress = "Please input your home address";
+  static const String msgEmptyOrder = "Sorry, your order is empty";
   static const String msgChooseAddress = "Choose your default address";
   static const String msgHttp408 = "Request Time Out";
   static const String msgHttpService = "Internal Services Error";

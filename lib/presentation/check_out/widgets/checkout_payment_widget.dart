@@ -42,9 +42,6 @@ class _CheckoutPaymentWidgetState extends State<CheckoutPaymentWidget> {
             return const CustomLoadingState();
           },
           success: (responseAddress) {
-            _idSubdistrict =
-                responseAddress.data!.first.attributes!.idSubdistrict!;
-            _deliveryAddress = responseAddress.data!.first.attributes!.address!;
             context.read<ShippingCostBloc>().add(ShippingCostEvent.shippingCost(
                   origin: subdistrictOrigin,
                   destination: _idSubdistrict,
@@ -61,6 +58,10 @@ class _CheckoutPaymentWidgetState extends State<CheckoutPaymentWidget> {
                 ),
               );
             } else {
+              _idSubdistrict =
+                  responseAddress.data!.first.attributes!.idSubdistrict!;
+              _deliveryAddress =
+                  responseAddress.data!.first.attributes!.address!;
               return Column(
                 children: [
                   CustomContainer(

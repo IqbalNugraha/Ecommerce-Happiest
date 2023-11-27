@@ -52,6 +52,8 @@ class OrderRequest {
   final String courierName;
   final int courierPrice;
   final String status;
+  final int buyerId;
+
   OrderRequest({
     required this.items,
     required this.totalPrice,
@@ -59,6 +61,7 @@ class OrderRequest {
     required this.courierName,
     required this.courierPrice,
     required this.status,
+    required this.buyerId,
   });
 
   OrderRequest copyWith({
@@ -68,6 +71,7 @@ class OrderRequest {
     String? courierName,
     int? courierPrice,
     String? status,
+    int? buyerId,
   }) {
     return OrderRequest(
       items: items ?? this.items,
@@ -76,6 +80,7 @@ class OrderRequest {
       courierName: courierName ?? this.courierName,
       courierPrice: courierPrice ?? this.courierPrice,
       status: status ?? this.status,
+      buyerId: buyerId ?? this.buyerId,
     );
   }
 
@@ -87,6 +92,7 @@ class OrderRequest {
       'courier_name': courierName,
       'courier_price': courierPrice,
       'status': status,
+      'buyerId': buyerId,
     };
   }
 
@@ -102,6 +108,7 @@ class OrderRequest {
       courierName: map['courier_name'] as String,
       courierPrice: map['courier_price'].toInt() as int,
       status: map['status'] as String,
+      buyerId: map['buyerId'] as int,
     );
   }
 

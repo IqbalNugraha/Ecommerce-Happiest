@@ -1,4 +1,5 @@
 import 'package:ecommerce_final_task/common/extensions/ext_format_currency.dart';
+import 'package:ecommerce_final_task/data/datasources/local_remote_datasources.dart';
 import 'package:ecommerce_final_task/data/models/requests/order/order_request_model.dart';
 import 'package:ecommerce_final_task/presentation/payment/payment_page.dart';
 import 'package:flutter/material.dart';
@@ -39,9 +40,11 @@ class ComponentPaymentNoVoucher extends StatefulWidget {
 class _ComponentPaymentNoVoucherState extends State<ComponentPaymentNoVoucher> {
   double? _courierPrice, _grandTotal;
   List<ItemProducts> items = [];
+  int buyerId = 0;
 
   @override
   void initState() {
+    getBuyerId();
     setState(() {
       items = widget.listCart
           .map(
@@ -55,6 +58,10 @@ class _ComponentPaymentNoVoucherState extends State<ComponentPaymentNoVoucher> {
           .toList();
     });
     super.initState();
+  }
+
+  void getBuyerId() async {
+    buyerId = await LocalDatasource().getId();
   }
 
   @override
@@ -146,7 +153,8 @@ class _ComponentPaymentNoVoucherState extends State<ComponentPaymentNoVoucher> {
                   return CustomButton(
                     width: size.width,
                     btnColor: MyColors.brandColor,
-                    function: () {
+                    function: () async {
+                      final buyerId = await LocalDatasource().getId();
                       final model = OrderRequest(
                         items: items,
                         totalPrice: _grandTotal!.toInt(),
@@ -154,7 +162,9 @@ class _ComponentPaymentNoVoucherState extends State<ComponentPaymentNoVoucher> {
                         courierName: widget.courierName,
                         courierPrice: _courierPrice!.toInt(),
                         status: "waiting_payment",
+                        buyerId: buyerId,
                       );
+
                       context.read<OrderBloc>().add(OrderEvent.order(
                             OrderRequestModel(data: model),
                           ));

@@ -11,6 +11,7 @@ import '../../../common/components/custom_seperator.dart';
 import '../../../common/constans/colors.dart';
 import '../../../common/constans/navigation.dart';
 import '../../../common/constans/variables.dart';
+import '../../../data/datasources/local_remote_datasources.dart';
 import '../../../data/models/requests/order/order_request_model.dart';
 import '../../cart/widgets/cart_model.dart';
 import '../bloc/order/order_bloc.dart';
@@ -37,9 +38,11 @@ class ComponentPaymentVoucher extends StatefulWidget {
 class _ComponentPaymentVoucherState extends State<ComponentPaymentVoucher> {
   double? _courierPrice, _grandTotal;
   List<ItemProducts> items = [];
+  int buyerId = 0;
 
   @override
   void initState() {
+    getBuyerId();
     setState(() {
       items = widget.listCart
           .map(
@@ -53,6 +56,10 @@ class _ComponentPaymentVoucherState extends State<ComponentPaymentVoucher> {
           .toList();
     });
     super.initState();
+  }
+
+  void getBuyerId() async {
+    buyerId = await LocalDatasource().getId();
   }
 
   @override
@@ -127,6 +134,7 @@ class _ComponentPaymentVoucherState extends State<ComponentPaymentVoucher> {
                         courierName: widget.courierName,
                         courierPrice: _courierPrice!.toInt(),
                         status: "waiting_payment",
+                        buyerId: buyerId,
                       );
                       context.read<OrderBloc>().add(OrderEvent.order(
                             OrderRequestModel(data: model),
